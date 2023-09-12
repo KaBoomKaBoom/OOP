@@ -1,4 +1,4 @@
-class plane:
+class Plane:
     def __init__(self):
         self.speed=100
         self.isMoving=True
@@ -12,7 +12,7 @@ class plane:
         self.speed+=amount
         self.isMoving=self.speed!=0
 
-    def printSpeed(speed):
+    def printSpeed(self,speed):
         print("The speed is ",self.speed," km/h")
     
     def increasePassengers(self,amount):
@@ -26,3 +26,16 @@ class plane:
             print("The plane is in the air")
         else:
             print("The plane has landed")
+
+def main():
+    plane=Plane()
+    plane.printSpeed(plane.speed)
+    plane.acccelerate(200)
+    print("Speed after acceleration: ")
+    plane.printSpeed(plane.speed)
+    plane.increasePassengers(100)
+    plane.printNumberPassengers()
+    plane.printInTheAir()
+
+if __name__=="__main__":
+    main()
