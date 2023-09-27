@@ -25,9 +25,9 @@ while (option != "q") {
 		case "fo":
 			var opt = "";
 			Console.WriteLine("1. cs - Create and assign a student to a faculty"); //+
-			Console.WriteLine("2. gs - Graduate a student from a faculty");
-			Console.WriteLine("3. des - Display current enrolled students (Graduates would be ignored)");
-			Console.WriteLine("4. dgs - Display graduates (Currently enrolled students would be ignored)");
+			Console.WriteLine("2. gs - Graduate a student from a faculty");//+
+			Console.WriteLine("3. des - Display current enrolled students (Graduates would be ignored)");//+
+			Console.WriteLine("4. dgs - Display graduates (Currently enrolled students would be ignored)");//+
 			Console.WriteLine("5. sf - Tell or not if a student belongs to this faculty");
 			Console.WriteLine();
 			Console.Write("Choose option: "); opt = Console.ReadLine();
@@ -57,7 +57,34 @@ while (option != "q") {
 					}
 					if (status != true) Console.WriteLine("Check faculty name!");
 					break;
-					
+				case "des":
+                    var status = false;
+                    Console.WriteLine("Which faculty?");
+                    var facult2 = Console.ReadLine();
+                    foreach (Faculty faculty1 in faculties)
+                    {
+                        if (faculty1.name == facult2) {
+							faculty1.showStudentsEnrolled();
+							status = true;
+                        }
+                    }
+                    if (status != true) Console.WriteLine("Check faculty name!");
+                    break;
+				case "dgs":
+
+                    var status = false;
+                    Console.WriteLine("Which faculty?");
+                    var facult3 = Console.ReadLine();
+                    foreach (Faculty faculty1 in faculties)
+                    {
+                        if (faculty1.name == facult3)
+                        {
+							faculty1.showStudentsGraduated();
+                            status = true;
+                        }
+                    }
+                    if (status != true) Console.WriteLine("Check faculty name!");
+                    break;
 			}
 			break;
 	}

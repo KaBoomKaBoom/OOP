@@ -37,13 +37,27 @@ namespace Lab1OOP
 			Student student=new Student();
 			students.Add(student);
 		}
-		public void showStudents() { 
-			foreach (Student student in students)
-			{
+        public void showStudent()
+        {
+			foreach (Student student in students) {
 				student.printStudent();
 			}
+        }
+        public void showStudentsEnroolled() { 
+
+			foreach (Student student in students)
+			{
+				if (student.graduatioStatus == false) { student.printStudent; }
+			}
 		}
-		public void showFaculty() {
+        public void showStudentsGraduated()
+        {
+            foreach (Student student in students)
+            {
+                if (student.graduatioStatus == true) { student.printStudent; }
+            }
+        }
+        public void showFaculty() {
 			Console.WriteLine("Faculty name: "+name);
 			Console.WriteLine("Faculty abbreviation: " + abbreviation);
 			Console.WriteLine("Faculty students: ");
