@@ -9,9 +9,9 @@ namespace Lab1OOP
 {
 	 public class Date
 	{
-		public int year;
-		public int month;
-		public int day;
+		public int year { get; set; }
+		public int month { get; set; }
+		public int day { get; set; }
 
 		public Date() {
 			Console.Write("Day: "); day = Convert.ToInt16(Console.ReadLine());

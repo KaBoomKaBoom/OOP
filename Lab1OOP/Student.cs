@@ -8,12 +8,12 @@ namespace Lab1OOP
 {
 	public class Student
 	{
-		public string firstName;
-		public string lastName;
-		public string email;
-		public Date enrollmnetDate;
-		public Date birthDate= new Date();
-		public bool graduatioStatus; //if a student is graduated or no
+		public string firstName { get; set; }
+		public string lastName { get; set; }
+		public string email { get; set; }
+		public Date enrollmnetDate { get; set; }
+		public Date birthDate { get; set; }
+		public bool graduatioStatus { get; set; } //if a student is graduated or no
 		public Student() {
 			Console.Write(" Name: "); firstName = Console.ReadLine();
 			Console.Write("Surname: "); lastName = Console.ReadLine();

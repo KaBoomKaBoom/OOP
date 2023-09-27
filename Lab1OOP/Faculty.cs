@@ -8,7 +8,7 @@ namespace Lab1OOP
 {
 	
 	public enum StudyField { 
-		MECHANICAL_ENGINEERING,
+		MECHANICAL_ENGINEERING ,
 		SOFTWARE_ENGINEERING,
 		FOOD_TECHNOLOGY,
 		URBANISM_ARCHITECTURE,
@@ -16,10 +16,10 @@ namespace Lab1OOP
 	}
 	public class Faculty
 	{
-		public string name;
-		public string abbreviation;
-		public List<Student> students;
-		public StudyField studyField;
+		public string name { get; set; }
+		public string abbreviation { get; set; }
+		public List<Student> students { get; set; }
+		public StudyField studyField { get; set; }
 		public Faculty() {
 			Console.Write("Faculty name: "); name = Console.ReadLine();
 			Console.Write("Faculty abbreviation: ");  abbreviation = Console.ReadLine();
@@ -57,7 +57,6 @@ namespace Lab1OOP
 			Console.WriteLine("Faculty name: "+name);
 			Console.WriteLine("Faculty abbreviation: " + abbreviation);
 			Console.WriteLine("Faculty students: ");
-			showStudents();
 			Console.WriteLine("Faculty field: "+studyField); 
 		}
 	}
