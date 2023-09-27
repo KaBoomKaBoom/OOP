@@ -33,28 +33,24 @@ namespace Lab1OOP
 			else Console.WriteLine("Incorrect study field");
 		}
 
-		public void assignStudent() {
-			Student student=new Student();
-			students.Add(student);
-		}
-        public void showStudent()
+		public void showStudents()
         {
 			foreach (Student student in students) {
 				student.printStudent();
 			}
         }
-        public void showStudentsEnroolled() { 
+        public void showStudentsEnrolled() { 
 
 			foreach (Student student in students)
 			{
-				if (student.graduatioStatus == false) { student.printStudent; }
+				if (student.graduatioStatus == false) { student.printStudent(); }
 			}
 		}
         public void showStudentsGraduated()
         {
             foreach (Student student in students)
             {
-                if (student.graduatioStatus == true) { student.printStudent; }
+                if (student.graduatioStatus == true) { student.printStudent(); }
             }
         }
         public void showFaculty() {
@@ -64,34 +60,5 @@ namespace Lab1OOP
 			showStudents();
 			Console.WriteLine("Faculty field: "+studyField); 
 		}
-
-		public void linkStudent(List<Faculty> faculties) {
-			var status = false;
-			Console.WriteLine("Which faculty?");
-			var facult = Console.ReadLine();
-			foreach (Faculty faculty1 in faculties)
-			{
-				if (faculty1.name == facult) { faculty1.assignStudent(); status = true; break; }
-			}
-			if (status == true) Console.WriteLine("Student record succesfuly created");
-			else Console.WriteLine("Student record was not created. Check faculty!");
-		}
-
-		public void gradStatus() {
-			Console.Write("Name: "); var name=Console.ReadLine();
-			Console.Write("Surname: "); var surname=Console.ReadLine();
-			var status = false;
-			foreach (Student student in students) {
-				if (name == student.firstName && surname == student.lastName)
-				{
-					student.changeGradStatus();
-					status = true;
-					break;
-				}
-			}
-			if (status) Console.WriteLine("Status changed");
-			else Console.WriteLine("No such student");
-		}
 	}
-	
 }
