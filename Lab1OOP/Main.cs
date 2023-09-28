@@ -3,12 +3,17 @@ using System.Text.Json;
 using System;
 using Lab1OOP;
 
+var fileManager = new FileManager();
 
-string option = "";
-List<Faculty> faculties = new List<Faculty>();
+
+List<Faculty> faculties = fileManager.StartSession();
+
+//foreach (var faculty in faculties) { faculty.showFaculty(); }
+//List<Faculty> faculties=new List<Faculty>();	
 var operations = new FacultyOperations();
 var generalOperations= new GeneralOperations();
-//faculties = generalOperations.LoadFacultiesFromJson();
+
+string option = "";
 while (option != "q") {
 	Console.WriteLine("1. cf - Create a new faculty"); //+
 	Console.WriteLine("2. fo - Faculty operations"); //+
@@ -26,6 +31,7 @@ while (option != "q") {
 		//Create a new faculty
 		case "cf":
 			generalOperations.createFaculty(faculties);
+			Console.WriteLine(faculties.Count);
 			break;
 		//fo - Faculty operations
 		case "fo":
@@ -77,7 +83,7 @@ while (option != "q") {
 			generalOperations.displayFacByField(faculties);	
 			break;
 		case "s":
-			generalOperations.SaveFacultiesToJson(faculties);
+			fileManager.SaveFacultiesToJson(faculties);
 			break;
 	}
 }

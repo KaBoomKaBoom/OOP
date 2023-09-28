@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 namespace Lab1OOP
 {
 	
-	public enum StudyField { 
-		MECHANICAL_ENGINEERING ,
+	public enum StudyField {
+		MECHANICAL_ENGINEERING,
 		SOFTWARE_ENGINEERING,
 		FOOD_TECHNOLOGY,
 		URBANISM_ARCHITECTURE,
@@ -20,11 +20,12 @@ namespace Lab1OOP
 		public string abbreviation { get; set; }
 		public List<Student> students { get; set; }
 		public StudyField studyField { get; set; }
-		public Faculty() {
+		public Faculty()
+		{
 			Console.Write("Faculty name: "); name = Console.ReadLine();
-			Console.Write("Faculty abbreviation: ");  abbreviation = Console.ReadLine();
+			Console.Write("Faculty abbreviation: "); abbreviation = Console.ReadLine();
 			students = new List<Student>();
-			Console.Write("Study Field: "); var field= Console.ReadLine();
+			Console.Write("Study Field: "); var field = Console.ReadLine();
 			if (field == "MECHANICAL_ENGINEERING") { studyField = StudyField.MECHANICAL_ENGINEERING; }
 			else if (field == "SOFTWARE_ENGINEERING") { studyField = StudyField.SOFTWARE_ENGINEERING; }
 			else if (field == "FOOD_TECHNOLOGY") { studyField = StudyField.FOOD_TECHNOLOGY; }
@@ -57,6 +58,7 @@ namespace Lab1OOP
 			Console.WriteLine("Faculty name: "+name);
 			Console.WriteLine("Faculty abbreviation: " + abbreviation);
 			Console.WriteLine("Faculty students: ");
+			showStudents();
 			Console.WriteLine("Faculty field: "+studyField); 
 		}
 	}

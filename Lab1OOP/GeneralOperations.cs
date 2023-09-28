@@ -9,13 +9,13 @@ namespace Lab1OOP
 {
     public class GeneralOperations
     {
-        public void createFaculty(List<Faculty> faculties)
-        {
-            Faculty faculty = new Faculty();
-            faculties.Add(faculty);
-        }
-        //Search by email
-        public void searchByEmail(List<Faculty> faculties)
+		public void createFaculty(List<Faculty> faculties)
+		{
+			Faculty faculty = new Faculty();
+			faculties.Add(faculty);
+		}
+		//Search by email
+		public void searchByEmail(List<Faculty> faculties)
         {
             var status = false;
             Console.WriteLine("Enter a valid email: ");
@@ -58,55 +58,6 @@ namespace Lab1OOP
                 }
             }
         }
-        //Open session
-
-        public void SaveFacultiesToJson(List<Faculty> facultyList)
-        {
-
-
-			string jsonFileName = @"C:\Users\Victor\source\repos\OOP\Lab1OOP\test.json";
-			var options = new JsonSerializerOptions
-			{
-				WriteIndented = true
-			};
-			// Serialize the list of faculties to JSON
-			string jsonString = JsonSerializer.Serialize(facultyList, options);
-			// Write the JSON data to a file
-			File.WriteAllText(jsonFileName, jsonString);
-			Console.WriteLine("Faculties saved to faculties.json.");
-            
-            
-        }
-
-		// Function to load faculties from JSON
-		/*public  List<Faculty> LoadFacultiesFromJson()
-        {
-            try
-            {
-                string jsonFileName = @"C:\Users\Victor\source\repos\OOP\Lab1OOP\test.json";
-
-                // Check if the JSON file exists
-                if (File.Exists(jsonFileName))
-                {
-                    // Read the JSON data from the file
-                    string jsonString = File.ReadAllText(jsonFileName);
-
-                    // Deserialize the JSON data into a list of faculties
-                    List<Faculty> loadedFaculties = JsonSerializer.Deserialize<List<Faculty>>(jsonString);
-                    return loadedFaculties;
-                }
-                else
-                {
-                    Console.WriteLine("JSON file not found.");
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error: " + ex.Message);
-            }
-
-            return new List<Faculty>(); // Return an empty list if loading fails
-
-        }*/
+        
     }
 }

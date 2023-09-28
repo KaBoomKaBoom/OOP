@@ -61,24 +61,27 @@ namespace Lab1OOP
             }
             if (status != true) Console.WriteLine("Check faculty or student name!");
         }
-        //Graduate a student from a faculty
-        public void createAssignStudent(List<Faculty> faculties) {
-            var status = false;
-            Console.WriteLine("Which faculty?");
-            var facult = Console.ReadLine();
-            foreach (Faculty faculty1 in faculties)
-            {
-                if (faculty1.name == facult) {
-                    Student student = new Student();
-                    faculty1.students.Add(student); 
-                    status = true; 
-                    break; }
-            }
-            if (status == true) Console.WriteLine("Student record succesfuly created");
-            else Console.WriteLine("Student record was not created. Check faculty!");
-        }
+		//Create a student
+		public void createAssignStudent(List<Faculty> faculties)
+		{
+			var status = false;
+			Console.WriteLine("Which faculty?");
+			var facult = Console.ReadLine();
+			foreach (Faculty faculty1 in faculties)
+			{
+				if (faculty1.name == facult)
+				{
+					Student student = new Student();
+					faculty1.students.Add(student);
+					status = true;
+					break;
+				}
+			}
+			if (status == true) Console.WriteLine("Student record succesfuly created");
+			else Console.WriteLine("Student record was not created. Check faculty!");
+		}
 
-        public void showStudents(List<Faculty> faculties, bool graduated)
+		public void showStudents(List<Faculty> faculties, bool graduated)
         {
             var status = false;
             Console.WriteLine("Which faculty?");
