@@ -20,7 +20,7 @@ namespace Lab1OOP
 		public string abbreviation { get; set; }
 		public List<Student> students { get; set; }
 		public StudyField studyField { get; set; }
-		public Faculty()
+		public Faculty insertFaculty()
 		{
 			Console.Write("Faculty name: "); name = Console.ReadLine();
 			Console.Write("Faculty abbreviation: "); abbreviation = Console.ReadLine();
@@ -32,6 +32,7 @@ namespace Lab1OOP
 			else if (field == "URBANISM_ARCHITECTURE") { studyField = StudyField.URBANISM_ARCHITECTURE; }
 			else if (field == "VETERINARY_MEDICINE") { studyField = StudyField.VETERINARY_MEDICINE; }
 			else Console.WriteLine("Incorrect study field");
+			return this;
 		}
 
 		public void showStudents()
@@ -39,6 +40,8 @@ namespace Lab1OOP
 			foreach (Student student in students) {
 				student.printStudent();
 			}
+			Console.WriteLine();
+			Console.WriteLine();
         }
         public void showStudentsEnrolled() { 
 
@@ -59,7 +62,8 @@ namespace Lab1OOP
 			Console.WriteLine("Faculty abbreviation: " + abbreviation);
 			Console.WriteLine("Faculty students: ");
 			showStudents();
-			Console.WriteLine("Faculty field: "+studyField); 
+			Console.WriteLine("Faculty field: "+studyField);
+			Console.WriteLine();
 		}
 	}
 }

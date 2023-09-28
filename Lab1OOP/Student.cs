@@ -14,14 +14,17 @@ namespace Lab1OOP
 		public Date enrollmnetDate { get; set; }
 		public Date birthDate { get; set; }
 		public bool graduatioStatus { get; set; } //if a student is graduated or no
-		public Student()
+		public Student insertStudent()
 		{
 			Console.Write(" Name: "); firstName = Console.ReadLine();
 			Console.Write("Surname: "); lastName = Console.ReadLine();
 			Console.Write("Email: "); email = Console.ReadLine();
-			Console.WriteLine("Enrollment date: "); enrollmnetDate = new Date();
-			Console.WriteLine("Birth date: "); birthDate = new Date();
+			enrollmnetDate = new Date();
+			Console.WriteLine("Enrollment date: "); enrollmnetDate = enrollmnetDate.insertDate();
+			birthDate = new Date();
+			Console.WriteLine("Birth date: "); birthDate = birthDate.insertDate();
 			graduatioStatus = false;
+			return this;
 		}
 
 		public void printStudent() {

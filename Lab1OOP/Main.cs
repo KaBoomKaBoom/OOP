@@ -1,19 +1,13 @@
-﻿
-using System.Text.Json;
+﻿using System.Text.Json;
 using System;
 using Lab1OOP;
 
 var fileManager = new FileManager();
-
-
 List<Faculty> faculties = fileManager.StartSession();
-
-//foreach (var faculty in faculties) { faculty.showFaculty(); }
-//List<Faculty> faculties=new List<Faculty>();	
 var operations = new FacultyOperations();
 var generalOperations= new GeneralOperations();
-
 string option = "";
+
 while (option != "q") {
 	Console.WriteLine("1. cf - Create a new faculty"); //+
 	Console.WriteLine("2. fo - Faculty operations"); //+
@@ -31,7 +25,6 @@ while (option != "q") {
 		//Create a new faculty
 		case "cf":
 			generalOperations.createFaculty(faculties);
-			Console.WriteLine(faculties.Count);
 			break;
 		//fo - Faculty operations
 		case "fo":
@@ -84,6 +77,9 @@ while (option != "q") {
 			break;
 		case "s":
 			fileManager.SaveFacultiesToJson(faculties);
+			break;
+		default:
+			Console.WriteLine("Invalid option!\n");
 			break;
 	}
 }

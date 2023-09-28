@@ -31,11 +31,11 @@ namespace Lab1OOP
                     }
                     if (status)
                     {
-                        Console.WriteLine("Student " + name + " " + surname + " belongs to faculty " + facult); break;
+                        Console.WriteLine("Student " + name + " " + surname + " belongs to faculty " + facult); return;
                     }
                 }
             }
-            if (status != true) Console.WriteLine("Does not belong to faculty");
+            Console.WriteLine("Does not belong to faculty\n");
         }
         //Graduate a student from a faculty
         public void gradStatus(List<Faculty> faculties) {
@@ -59,7 +59,7 @@ namespace Lab1OOP
                     }
                 }
             }
-            if (status != true) Console.WriteLine("Check faculty or student name!");
+            if (status != true) Console.WriteLine("Check faculty or student name!\n");
         }
 		//Create a student
 		public void createAssignStudent(List<Faculty> faculties)
@@ -72,13 +72,14 @@ namespace Lab1OOP
 				if (faculty1.name == facult)
 				{
 					Student student = new Student();
+                    student = student.insertStudent();
 					faculty1.students.Add(student);
 					status = true;
 					break;
 				}
 			}
-			if (status == true) Console.WriteLine("Student record succesfuly created");
-			else Console.WriteLine("Student record was not created. Check faculty!");
+			if (status == true) Console.WriteLine("Student record succesfuly created\n");
+			else Console.WriteLine("Student record was not created. Check faculty\n!");
 		}
 
 		public void showStudents(List<Faculty> faculties, bool graduated)
@@ -101,7 +102,7 @@ namespace Lab1OOP
                     status = true;break;
                 }
             }
-            if (status != true) Console.WriteLine("Check faculty name!");
+            if (status != true) Console.WriteLine("Check faculty name!\n");
         }
     }
 }

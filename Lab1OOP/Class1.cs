@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
@@ -13,7 +14,7 @@ namespace Lab1OOP
 		{
 
 
-			string jsonFileName = @"C:\Users\Victor\source\repos\OOP\Lab1OOP\test.json";
+			string jsonFileName = @"C:\Users\Victor\source\repos\OOP\Lab1OOP\Faculties.json";
 			var options = new JsonSerializerOptions
 			{
 				WriteIndented = true
@@ -26,10 +27,16 @@ namespace Lab1OOP
 
 
 		}
-		public List<Faculty> StartSession() {
-			string text = File.ReadAllText(@"C:\Users\Victor\source\repos\OOP\Lab1OOP\test.json");
+		public List<Faculty> StartSession()
+		{
+			if (File.Exists(@"C:\Users\Victor\source\repos\OOP\Lab1OOP\Faculties.json")) 
+			{ 
+			string text = File.ReadAllText(@"C:\Users\Victor\source\repos\OOP\Lab1OOP\Faculties.json");
 			var faculties = JsonSerializer.Deserialize<List<Faculty>>(text);
+				File.Delete(@"C:\Users\Victor\source\repos\OOP\Lab1OOP\Faculties.json");
 			return faculties;
+			}
+			return new List<Faculty>();
         }
 	}
 }
