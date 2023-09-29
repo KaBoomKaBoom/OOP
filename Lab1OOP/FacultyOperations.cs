@@ -38,7 +38,7 @@ namespace Lab1OOP
             Console.WriteLine("Does not belong to faculty\n");
         }
         //Graduate a student from a faculty
-        public void gradStatus(List<Faculty> faculties) {
+        public void gradStatus(List<Faculty> faculties,string logPath) {
             var status = false;
             Console.WriteLine("Which faculty?");
             var facult = Console.ReadLine();
@@ -53,7 +53,8 @@ namespace Lab1OOP
                         if (name == student.firstName && surname == student.lastName)
                         {
                             student.changeGradStatus();
-                            status = true;
+							File.AppendAllText(logPath, $"Graduated student: {student.firstName} {student.lastName}, from faculty: {faculty1.name}");
+							status = true;
                             break;
                         }
                     }
@@ -62,7 +63,7 @@ namespace Lab1OOP
             if (status != true) Console.WriteLine("Check faculty or student name!\n");
         }
 		//Create a student
-		public void createAssignStudent(List<Faculty> faculties)
+		public void createAssignStudent(List<Faculty> faculties,string logPath)
 		{
 			var status = false;
 			Console.WriteLine("Which faculty?");
@@ -74,12 +75,14 @@ namespace Lab1OOP
 					Student student = new Student();
                     student = student.insertStudent();
 					faculty1.students.Add(student);
+					File.AppendAllText(logPath, $"Created a new student: {student.firstName} {student.lastName}. Assigned to faculty: {faculty1.name}");
 					status = true;
 					break;
 				}
 			}
 			if (status == true) Console.WriteLine("Student record succesfuly created\n");
 			else Console.WriteLine("Student record was not created. Check faculty\n!");
+			
 		}
 
 		public void showStudents(List<Faculty> faculties, bool graduated)

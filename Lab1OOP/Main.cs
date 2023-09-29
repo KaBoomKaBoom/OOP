@@ -1,6 +1,7 @@
 ﻿using System.Text.Json;
 using System;
 using Lab1OOP;
+using System.IO;
 
 var fileManager = new FileManager();
 List<Faculty> faculties = fileManager.StartSession();
@@ -8,13 +9,16 @@ var operations = new FacultyOperations();
 var generalOperations= new GeneralOperations();
 string option = "";
 
+string logFileName = "Log.txt";
+string logPath = Path.Combine(Environment.CurrentDirectory, @"Log\", logFileName);
+
 while (option != "q") {
 	Console.WriteLine("1. cf - Create a new faculty"); //+
 	Console.WriteLine("2. fo - Faculty operations"); //+
 	Console.WriteLine("3. ssf - Search what faculty a student belongs to by email");//+
 	Console.WriteLine("4. df - Display University faculties");//+
 	Console.WriteLine("5. dff - Display all faculties belonging to a field");//+
-	Console.WriteLine("6. s - Save the session");//+
+	//Console.WriteLine("6. s - Save the session");//+
 	Console.WriteLine("7. q - Quit");//+
 	Console.WriteLine();
 	Console.Write("Choose option: "); option = Console.ReadLine();
@@ -24,7 +28,8 @@ while (option != "q") {
 	{
 		//Create a new faculty
 		case "cf":
-			generalOperations.createFaculty(faculties);
+			generalOperations.createFaculty(faculties,logPath);
+			
 			break;
 		//fo - Faculty operations
 		case "fo":
@@ -42,11 +47,11 @@ while (option != "q") {
 			{
 				//Create and assign a student to a faculty
 				case "cs":
-					operations.createAssignStudent(faculties);
+					operations.createAssignStudent(faculties,logPath);
 					break;
 				//Graduate a student from a faculty
 				case "gs":
-					operations.gradStatus(faculties);
+					operations.gradStatus(faculties,logPath);
 					break;
                 //Display current enrolled students (Graduates would be ignored)
                 case "des":
@@ -75,11 +80,13 @@ while (option != "q") {
 		case "dff":
 			generalOperations.displayFacByField(faculties);	
 			break;
-		case "s":
-			fileManager.SaveFacultiesToJson(faculties);
+		//save current session
+		//exit the system
+		case "q":
 			break;
 		default:
 			Console.WriteLine("Invalid option!\n");
 			break;
 	}
 }
+fileManager.SaveFacultiesToJson(faculties);

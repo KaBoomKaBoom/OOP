@@ -32,8 +32,8 @@ namespace Lab1OOP
 			Console.WriteLine("Surname: "+lastName);
 			Console.WriteLine("Email: "+email);
 			Console.Write("Enrollmnet Date:"); enrollmnetDate.printDate(enrollmnetDate);
-			Console.WriteLine();
 			Console.Write("Birth Date:"); birthDate.printDate(birthDate);
+
 		}
 
 		public void changeGradStatus() => graduatioStatus = true;

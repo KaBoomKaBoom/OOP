@@ -9,7 +9,7 @@ namespace Lab1OOP
 {
     public class GeneralOperations
     {
-		public void createFaculty(List<Faculty> faculties)
+		public void createFaculty(List<Faculty> faculties, string logPath)
 		{
             var status = false;
 			Faculty faculty = new Faculty();
@@ -19,6 +19,7 @@ namespace Lab1OOP
             }
             if (!status) { faculties.Add(faculty); }
             else Console.WriteLine("Such faculty already exist!\n");
+			File.AppendAllText(logPath, $"Created a new faculty: {faculty.name}");
 		}
 		//Search by email
 		public void searchByEmail(List<Faculty> faculties)

@@ -39,9 +39,9 @@ namespace Lab1OOP
         {
 			foreach (Student student in students) {
 				student.printStudent();
+				Console.WriteLine();
 			}
-			Console.WriteLine();
-			Console.WriteLine();
+
         }
         public void showStudentsEnrolled() { 
 

@@ -22,7 +22,7 @@ namespace Lab1OOP
 		}
 
 		public void printDate(Date date) {
-			Console.Write(date.day + "/" + date.month + "/" + date.year);
+			Console.WriteLine(date.day + "/" + date.month + "/" + date.year);
 			
 		}
 	}
