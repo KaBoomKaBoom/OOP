@@ -1,0 +1,25 @@
+[
+  {
+    "name": "Calculatoare,informatica si microelectronica",
+    "abbreviation": "CIM",
+    "students": [
+      {
+        "firstName": "Ion",
+        "lastName": "Zarea",
+        "email": "i.zarea@isa.utm.md",
+        "enrollmnetDate": {
+          "year": 2022,
+          "month": 11,
+          "day": 11
+        },
+        "birthDate": {
+          "year": 2002,
+          "month": 12,
+          "day": 12
+        },
+        "graduatioStatus": false
+      }
+    ],
+    "studyField": 1
+  }
+]

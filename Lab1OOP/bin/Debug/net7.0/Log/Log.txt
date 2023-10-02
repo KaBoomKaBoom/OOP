@@ -1,8 +1,0 @@
-Created a new faculty: Calculatoare,informatica si microelectronica
-Created a new student: Emily Anderson. Assigned to faculty: Calculatoare,informatica si microelectronica
-Created a new student: Michael Johnson. Assigned to faculty: Calculatoare,informatica si microelectronica
-Created a new faculty: Inginerie Transport Auto
-Created a new student: Sophia Martinez. Assigned to faculty: Inginerie Transport Auto
-Created a new faculty: Urbanism si Arhitectura
-Created a new student: Daniel Brown. Assigned to faculty: Urbanism si Arhitectura
-Created a new student: Olivia Smith. Assigned to faculty: Urbanism si Arhitectura

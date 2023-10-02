@@ -15,7 +15,6 @@ namespace Lab1OOP
 
 
 			string jsonFileName = "Faculties.json";
-			string path = Path.Combine(Environment.CurrentDirectory, @"Faculties\", jsonFileName);
 			var options = new JsonSerializerOptions
 			{
 				WriteIndented = true
@@ -23,18 +22,17 @@ namespace Lab1OOP
 			// Serialize the list of faculties to JSON
 			string jsonString = JsonSerializer.Serialize(facultyList, options);
 			// Write the JSON data to a file
-			File.WriteAllText(path, jsonString);
+			File.WriteAllText(jsonFileName, jsonString);
 			Console.WriteLine("Faculties saved to faculties.json.");
 		}
 		public List<Faculty> StartSession()
 		{
 			string jsonFileName = "Faculties.json";
-			string path = Path.Combine(Environment.CurrentDirectory, @"Faculties\", jsonFileName);
-			if (File.Exists(path)) 
+;			if (File.Exists(jsonFileName)) 
 			{ 
-			string text = File.ReadAllText(path);
+			string text = File.ReadAllText(jsonFileName);
 			var faculties = JsonSerializer.Deserialize<List<Faculty>>(text);
-				File.Delete(path);
+				File.Delete(jsonFileName);
 			return faculties;
 			}
 			return new List<Faculty>();

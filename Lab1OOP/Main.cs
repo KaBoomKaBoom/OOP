@@ -5,12 +5,11 @@ using System.IO;
 
 var fileManager = new FileManager();
 List<Faculty> faculties = fileManager.StartSession();
-var operations = new FacultyOperations();
+var facultyOperations = new FacultyOperations();
 var generalOperations= new GeneralOperations();
 string option = "";
 
 string logFileName = "Log.txt";
-string logPath = Path.Combine(Environment.CurrentDirectory, @"Log\", logFileName);
 
 while (option != "q") {
 	Console.WriteLine("1. cf - Create a new faculty"); //+
@@ -28,7 +27,7 @@ while (option != "q") {
 	{
 		//Create a new faculty
 		case "cf":
-			generalOperations.createFaculty(faculties,logPath);
+			generalOperations.createFaculty(faculties,logFileName);
 			
 			break;
 		//fo - Faculty operations
@@ -47,22 +46,22 @@ while (option != "q") {
 			{
 				//Create and assign a student to a faculty
 				case "cs":
-					operations.createAssignStudent(faculties,logPath);
+                    facultyOperations.createAssignStudent(faculties,logFileName);
 					break;
 				//Graduate a student from a faculty
 				case "gs":
-					operations.gradStatus(faculties,logPath);
+                    facultyOperations.gradStatus(faculties,logFileName);
 					break;
                 //Display current enrolled students (Graduates would be ignored)
                 case "des":
-					operations.showStudents(faculties, false);
+                    facultyOperations.showStudents(faculties, false);
                     break;
                 //Display graduates (Currently enrolled students would be ignored)
                 case "dgs":
-					operations.showStudents(faculties, true);
+                    facultyOperations.showStudents(faculties, true);
                     break;
 				case "sf":
-					operations.checkSudent(faculties);
+                    facultyOperations.checkSudent(faculties);
 					break;
 				case "b":
 					break;
