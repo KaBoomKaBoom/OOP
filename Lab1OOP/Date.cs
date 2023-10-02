@@ -13,7 +13,7 @@ namespace Lab1OOP
 		public int month { get; set; }
 		public int day { get; set; }
 
-		public Date insertDate()
+		public Date giveDate()
 		{
 			Console.Write("Day: "); day = Convert.ToInt16(Console.ReadLine());
 			Console.Write("Month: "); month = Convert.ToInt16(Console.ReadLine());

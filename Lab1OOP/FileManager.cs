@@ -12,8 +12,6 @@ namespace Lab1OOP
 	{
 		public void SaveFacultiesToJson(List<Faculty> facultyList)
 		{
-
-
 			string jsonFileName = "Faculties.json";
 			var options = new JsonSerializerOptions
 			{

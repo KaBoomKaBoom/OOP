@@ -35,8 +35,8 @@ namespace Lab1OOP
 			return this;
 		}
 
-		// TodO name show -> print
-		public void showStudents()
+		// TodO name show -> print +
+		public void printStudents()
         {
 			foreach (Student student in students) {
 				student.printStudent();
@@ -44,14 +44,14 @@ namespace Lab1OOP
 			}
 
         }
-        public void showStudentsEnrolled() { 
+        public void printStudentsEnrolled() { 
 
 			foreach (Student student in students)
 			{
 				if (student.graduatioStatus == false) { student.printStudent(); }
 			}
 		}
-        public void showStudentsGraduated()
+        public void printStudentsGraduated()
         {
             foreach (Student student in students)
             {
@@ -62,7 +62,7 @@ namespace Lab1OOP
 			Console.WriteLine("Faculty name: "+name);
 			Console.WriteLine("Faculty abbreviation: " + abbreviation);
 			Console.WriteLine("Faculty students: ");
-			showStudents();
+			printStudents();
 			Console.WriteLine("Faculty field: "+studyField);
 			Console.WriteLine();
 		}

@@ -8,6 +8,7 @@ namespace Lab1OOP
 {
     public class FacultyOperations
     {
+        Logging logging = new Logging();    
         //Tell or not if a student belongs to this faculty
         public void checkSudent(List<Faculty> faculties)
         {
@@ -38,24 +39,26 @@ namespace Lab1OOP
             Console.WriteLine("Does not belong to faculty\n");
         }
         //Graduate a student from a faculty
-        public void gradStatus(List<Faculty> faculties,string logPath) {
+        public void gradStatus(List<Faculty> faculties) {
             var status = false;
             Console.WriteLine("Which faculty?");
             var facult = Console.ReadLine();
             Console.WriteLine("Which student?");
-            Console.Write("Name: "); var name = Console.ReadLine();
-            Console.Write("Surname: "); var surname = Console.ReadLine();
+            Console.Write("Name: "); 
+            var name = Console.ReadLine();
+            Console.Write("Surname: "); 
+            var surname = Console.ReadLine();
 
-            // TODO no faculty1 type of names
-            foreach (Faculty faculty1 in faculties)
+            // TODO no faculty1 type of names +
+            foreach (Faculty faculty in faculties)
             {
-                if (faculty1.name == facult) {
-                    foreach (Student student in faculty1.students)
+                if (faculty.name == facult) {
+                    foreach (Student student in faculty.students)
                     {
                         if (name == student.firstName && surname == student.lastName)
                         {
-                            student.changeGradStatus();
-							File.AppendAllText(logPath, $"Graduated student: {student.firstName} {student.lastName}, from faculty: {faculty1.name}");
+                            student.changeGraduationStatus();
+                            logging.logGraduateStudent(faculty, student);
 							status = true;
                             break;
                         }
@@ -66,20 +69,20 @@ namespace Lab1OOP
         }
 		//Create a student
         // TODO addStudent rename
-		public void createAssignStudent(List<Faculty> faculties,string logPath)
+		public void assignStudent(List<Faculty> faculties)
 		{
 			var status = false;
 			Console.WriteLine("Which faculty?");
-			var facult = Console.ReadLine();
-			foreach (Faculty faculty1 in faculties)
+			var facultyName = Console.ReadLine();
+			foreach (Faculty faculty in faculties)
 			{
-				if (faculty1.name == facult)
+				if (faculty.name == facultyName)
 				{
 					Student student = new Student();
-                    student = student.insertStudent();
-					faculty1.students.Add(student);
+                    student = student.createStudent();
+					faculty.students.Add(student);
                     // TODO create log class 
-					File.AppendAllText(logPath, $"Created a new student: {student.firstName} {student.lastName}. Assigned to faculty: {faculty1.name}");
+                    logging.logAssigningToFaculty(faculty, student);
 					status = true;
 					break;
 				}
@@ -89,7 +92,7 @@ namespace Lab1OOP
 			
 		}
 
-		public void showStudents(List<Faculty> faculties, bool graduated)
+		public void printStudents(List<Faculty> faculties, bool graduated)
         {
             var status = false;
             Console.WriteLine("Which faculty?");
@@ -100,10 +103,10 @@ namespace Lab1OOP
                 {
                     switch (graduated) {
                         case true:
-                            faculty1.showStudentsGraduated();
+                            faculty1.printStudentsGraduated();
                             break;
                         case false:
-                            faculty1.showStudentsEnrolled();
+                            faculty1.printStudentsEnrolled();
                             break;
                     }
                     status = true;break;

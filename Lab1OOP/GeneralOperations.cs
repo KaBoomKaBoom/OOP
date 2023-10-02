@@ -9,7 +9,8 @@ namespace Lab1OOP
 {
     public class GeneralOperations
     {
-		public void createFaculty(List<Faculty> faculties, string logPath)
+        Logging logging = new Logging();
+        public void createFaculty(List<Faculty> faculties)
 		{
             var status = false;
 			Faculty faculty = new Faculty();
@@ -17,9 +18,9 @@ namespace Lab1OOP
             foreach (var facult in faculties) { 
                 if(faculty.name==facult.name) status = true;
             }
-            if (!status) { faculties.Add(faculty); }
+            if (!status) { faculties.Add(faculty); logging.logCreationOfFaculty(faculty); }
             else Console.WriteLine("Such faculty already exist!\n");
-			File.AppendAllText(logPath, $"Created a new faculty: {faculty.name}");
+			
 		}
 		//Search by email
 		public void searchByEmail(List<Faculty> faculties)
@@ -56,7 +57,7 @@ namespace Lab1OOP
             else Console.WriteLine("No faculties registered\n");
         }
         //Display all faculties belonging to a field
-        public void displayFacByField(List<Faculty> faculties)
+        public void displayFaultiesByStudyField(List<Faculty> faculties)
         {
             if (faculties.Count != 0)
             {
