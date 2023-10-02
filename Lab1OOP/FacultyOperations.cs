@@ -45,6 +45,8 @@ namespace Lab1OOP
             Console.WriteLine("Which student?");
             Console.Write("Name: "); var name = Console.ReadLine();
             Console.Write("Surname: "); var surname = Console.ReadLine();
+
+            // TODO no faculty1 type of names
             foreach (Faculty faculty1 in faculties)
             {
                 if (faculty1.name == facult) {
@@ -63,6 +65,7 @@ namespace Lab1OOP
             if (status != true) Console.WriteLine("Check faculty or student name!\n");
         }
 		//Create a student
+        // TODO addStudent rename
 		public void createAssignStudent(List<Faculty> faculties,string logPath)
 		{
 			var status = false;
@@ -75,6 +78,7 @@ namespace Lab1OOP
 					Student student = new Student();
                     student = student.insertStudent();
 					faculty1.students.Add(student);
+                    // TODO create log class 
 					File.AppendAllText(logPath, $"Created a new student: {student.firstName} {student.lastName}. Assigned to faculty: {faculty1.name}");
 					status = true;
 					break;

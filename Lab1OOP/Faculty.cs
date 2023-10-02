@@ -35,6 +35,7 @@ namespace Lab1OOP
 			return this;
 		}
 
+		// TodO name show -> print
 		public void showStudents()
         {
 			foreach (Student student in students) {

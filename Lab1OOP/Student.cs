@@ -14,6 +14,8 @@ namespace Lab1OOP
 		public Date enrollmnetDate { get; set; }
 		public Date birthDate { get; set; }
 		public bool graduatioStatus { get; set; } //if a student is graduated or no
+
+		// TODO give function more meangful name
 		public Student insertStudent()
 		{
 			Console.Write(" Name: "); firstName = Console.ReadLine();
@@ -35,7 +37,7 @@ namespace Lab1OOP
 			Console.Write("Birth Date:"); birthDate.printDate(birthDate);
 
 		}
-
+		// TODO change Grad to Gradution
 		public void changeGradStatus() => graduatioStatus = true;
 	}
 }

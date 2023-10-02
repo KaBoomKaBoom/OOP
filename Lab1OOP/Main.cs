@@ -12,6 +12,7 @@ string option = "";
 string logFileName = "Log.txt";
 
 while (option != "q") {
+	// TODO Write a function
 	Console.WriteLine("1. cf - Create a new faculty"); //+
 	Console.WriteLine("2. fo - Faculty operations"); //+
 	Console.WriteLine("3. ssf - Search what faculty a student belongs to by email");//+
@@ -20,7 +21,8 @@ while (option != "q") {
 	//Console.WriteLine("6. s - Save the session");//+
 	Console.WriteLine("7. q - Quit");//+
 	Console.WriteLine();
-	Console.Write("Choose option: "); option = Console.ReadLine();
+	Console.Write("Choose option: "); 
+	option = Console.ReadLine();
 	Console.WriteLine();
 
 	switch (option)
@@ -33,6 +35,7 @@ while (option != "q") {
 		//fo - Faculty operations
 		case "fo":
 			var opt = "";
+			// TOdo move to function
 			Console.WriteLine("1. cs - Create and assign a student to a faculty"); //+
 			Console.WriteLine("2. gs - Graduate a student from a faculty");//+
 			Console.WriteLine("3. des - Display current enrolled students (Graduates would be ignored)");//+
@@ -40,8 +43,10 @@ while (option != "q") {
 			Console.WriteLine("5. sf - Tell or not if a student belongs to this faculty");//+
 			Console.WriteLine("6. b - Back");//+
 			Console.WriteLine();
-			Console.Write("Choose option: "); opt = Console.ReadLine();
+			Console.Write("Choose option: "); 
+			opt = Console.ReadLine();
 			Console.WriteLine();
+			// TODO move the switch to a different function
 			switch (opt)
 			{
 				//Create and assign a student to a faculty
