@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json;
-using System.Threading.Tasks;
-
-namespace Lab1OOP
+﻿namespace Lab1OOP
 {
-    public class GeneralOperations
+	public class GeneralOperations
     {
         Logging logging = new Logging();
         public void createFaculty(List<Faculty> faculties)

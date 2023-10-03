@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Lab1OOP
+﻿namespace Lab1OOP
 {
-    public class Options
+	public class Options
     {
         public string generalOptions(string option) 
         {
@@ -16,7 +10,7 @@ namespace Lab1OOP
             Console.WriteLine("4. df - Display University faculties");//+
             Console.WriteLine("5. dff - Display all faculties belonging to a field");//+
             Console.WriteLine("6. eff - Enroll student from a file");//+
-            Console.WriteLine("7. gff - Graduate students fro a file");//+
+            Console.WriteLine("7. gff - Graduate students from a file");//+
             Console.WriteLine("8. q - Quit and save");//+
             Console.WriteLine();
             Console.Write("Choose option: ");

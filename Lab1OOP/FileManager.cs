@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.Design;
-using System.Linq;
-using System.Text;
-using System.Text.Json;
-using System.Threading.Tasks;
+﻿using System.Text.Json;
 
 namespace Lab1OOP
 {
@@ -21,7 +15,7 @@ namespace Lab1OOP
 			string jsonString = JsonSerializer.Serialize(facultyList, options);
 			// Write the JSON data to a file
 			File.WriteAllText(jsonFileName, jsonString);
-			Console.WriteLine("Faculties saved to faculties.json.");
+			Console.WriteLine(@"Faculties saved to Lab1OOP\bin\Debug\net7.0\Faculties.json.");
 		}
 		public List<Faculty> StartSession()
 		{

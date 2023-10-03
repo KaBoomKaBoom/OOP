@@ -1,31 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Lab1OOP
+﻿namespace Lab1OOP
 {
-    public class FacultyOperations
+	public class FacultyOperations
     {
         Logging logging = new Logging();    
         //Tell or not if a student belongs to this faculty
         public void checkSudent(List<Faculty> faculties)
         {
             var status = false;
-            Console.WriteLine("Which faculty?");
+            Console.WriteLine("Which faculty?(abbreviation)");
             var facult = Console.ReadLine();
-            Console.WriteLine("Which student?");
-            Console.Write("Name: "); var name = Console.ReadLine();
-            Console.Write("Surname: "); var surname = Console.ReadLine();
+            Console.WriteLine("Which student?(email)");
+            var email=Console.ReadLine();
+            var name = "";
+            var surname = "";
             foreach (Faculty faculty in faculties)
             {
-                if (faculty.name == facult)
+                if (faculty.abbreviation == facult)
                 {
                     foreach (Student student in faculty.students)
                     {
-                        if (name == student.firstName && surname == student.lastName)
+                        if (email==student.email)
                         {
+                            name=student.firstName; 
+                            surname=student.lastName;
                             status = true;
                             break;
                         }
@@ -41,21 +38,18 @@ namespace Lab1OOP
         //Graduate a student from a faculty
         public void gradStatus(List<Faculty> faculties) {
             var status = false;
-            Console.WriteLine("Which faculty?");
+            Console.WriteLine("Which faculty?(abbreviation)");
             var facult = Console.ReadLine();
-            Console.WriteLine("Which student?");
-            Console.Write("Name: "); 
-            var name = Console.ReadLine();
-            Console.Write("Surname: "); 
-            var surname = Console.ReadLine();
+			Console.WriteLine("Which student?(email)");
+			var email = Console.ReadLine();
 
-            // TODO no faculty1 type of names +
-            foreach (Faculty faculty in faculties)
+			// TODO no faculty1 type of names +
+			foreach (Faculty faculty in faculties)
             {
-                if (faculty.name == facult) {
+                if (faculty.abbreviation == facult) {
                     foreach (Student student in faculty.students)
                     {
-                        if (name == student.firstName && surname == student.lastName)
+                        if (email==student.email)
                         {
                             student.changeGraduationStatus();
                             logging.logGraduateStudent(faculty, student);
@@ -72,11 +66,11 @@ namespace Lab1OOP
 		public void assignStudent(List<Faculty> faculties)
 		{
 			var status = false;
-			Console.WriteLine("Which faculty?");
+			Console.WriteLine("Which faculty?(abbreviation)");
 			var facultyName = Console.ReadLine();
 			foreach (Faculty faculty in faculties)
 			{
-				if (faculty.name == facultyName)
+				if (faculty.abbreviation == facultyName)
 				{
 					Student student = new Student();
                     student = student.createStudent();
@@ -95,11 +89,11 @@ namespace Lab1OOP
 		public void printStudents(List<Faculty> faculties, bool graduated)
         {
             var status = false;
-            Console.WriteLine("Which faculty?");
+            Console.WriteLine("Which faculty?(abbreviation)");
             var facult = Console.ReadLine();
             foreach (Faculty faculty1 in faculties)
             {
-                if (faculty1.name == facult)
+                if (faculty1.abbreviation == facult)
                 {
                     switch (graduated) {
                         case true:

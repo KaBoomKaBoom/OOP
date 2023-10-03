@@ -1,7 +1,4 @@
-﻿using System.Text.Json;
-using System;
-using Lab1OOP;
-using System.IO;
+﻿using Lab1OOP;
 
 var fileManager = new FileManager();
 List<Faculty> faculties = fileManager.StartSession();
@@ -12,7 +9,7 @@ string option = "";
 
 while (option != "q") {
 	// TODO Write a function +
-	option=options.generalOptions(option);
+	option = options.generalOptions(option);
 	switch (option)
 	{
 		//Create a new faculty
