@@ -7,6 +7,7 @@ var fileManager = new FileManager();
 List<Faculty> faculties = fileManager.StartSession();
 var generalOperations= new GeneralOperations();
 var options=new Options();
+var batchOperations=new batchOperations();
 string option = "";
 
 while (option != "q") {
@@ -38,6 +39,12 @@ while (option != "q") {
 			break;
 		//save current session
 		//exit the system
+		case "eff":
+			batchOperations.batchEnrollment(faculties);
+			break;
+		case "gff":
+			batchOperations.batchGraduate(faculties);	
+			break;
 		case "q":
 			break;
 		default:

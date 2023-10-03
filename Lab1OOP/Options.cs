@@ -15,7 +15,9 @@ namespace Lab1OOP
             Console.WriteLine("3. ssf - Search what faculty a student belongs to by email");//+
             Console.WriteLine("4. df - Display University faculties");//+
             Console.WriteLine("5. dff - Display all faculties belonging to a field");//+
-            Console.WriteLine("7. q - Quit");//+
+            Console.WriteLine("6. eff - Enroll student from a file");//+
+            Console.WriteLine("7. gff - Graduate students fro a file");//+
+            Console.WriteLine("8. q - Quit and save");//+
             Console.WriteLine();
             Console.Write("Choose option: ");
             option = Console.ReadLine();

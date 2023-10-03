@@ -1,2 +1,7 @@
-Created a new faculty: Calculatoare,informatica si microelectronica
-Created a new student: Ion Zarea. Assigned to faculty: Calculatoare,informatica si microelectronica
+Created a new faculty: Urbanism si arhitectura
+Created a new student: Maria Ceren. Assigned to faculty: Urbanism si arhitectura
+Created a new faculty: Calculatoare, informatica si microelectronica
+Created a new student: Ion Cerea. Assigned to faculty: Calculatoare, informatica si microelectronica
+Created a new student: Valeriu Branza. Assigned to faculty: Calculatoare, informatica si microelectronica
+Created a new faculty: Inginerie transport auto
+Created a new student: Adrian Pelerean. Assigned to faculty: Inginerie transport auto

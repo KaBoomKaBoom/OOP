@@ -1,25 +1,87 @@
 [
   {
-    "name": "Calculatoare,informatica si microelectronica",
-    "abbreviation": "CIM",
+    "name": "Urbanism si arhitectura",
+    "abbreviation": "UA",
     "students": [
       {
-        "firstName": "Ion",
-        "lastName": "Zarea",
-        "email": "i.zarea@isa.utm.md",
+        "firstName": "Maria",
+        "lastName": "Ceren",
+        "email": "m.ceren@ua.utm.md",
         "enrollmnetDate": {
-          "year": 2022,
+          "year": 2013,
           "month": 11,
           "day": 11
         },
         "birthDate": {
+          "year": 1985,
+          "month": 4,
+          "day": 13
+        },
+        "graduatioStatus": false
+      }
+    ],
+    "studyField": 3
+  },
+  {
+    "name": "Calculatoare, informatica si microelectronica",
+    "abbreviation": "CIM",
+    "students": [
+      {
+        "firstName": "Ion",
+        "lastName": "Cerea",
+        "email": "i.cerea@isa.utm.md",
+        "enrollmnetDate": {
+          "year": 2022,
+          "month": 9,
+          "day": 13
+        },
+        "birthDate": {
           "year": 2002,
+          "month": 5,
+          "day": 23
+        },
+        "graduatioStatus": false
+      },
+      {
+        "firstName": "Valeriu",
+        "lastName": "Branza",
+        "email": "v.branza@isa.utm.md",
+        "enrollmnetDate": {
+          "year": 2014,
           "month": 12,
-          "day": 12
+          "day": 13
+        },
+        "birthDate": {
+          "year": 1996,
+          "month": 8,
+          "day": 7
         },
         "graduatioStatus": false
       }
     ],
     "studyField": 1
+  },
+  {
+    "name": "Inginerie transport auto",
+    "abbreviation": "ITA",
+    "students": [
+      {
+        "firstName": "Adrian",
+        "lastName": "Pelerean",
+        "email": "a.pelerean@ita.utm.md",
+        "enrollmnetDate": {
+          "year": 2019,
+          "month": 5,
+          "day": 14
+        },
+        "birthDate": {
+          "year": 2000,
+          "month": 7,
+          "day": 23
+        },
+        "graduatioStatus": false
+      }
+    ],
+    "studyField": 0
   }
 ]
