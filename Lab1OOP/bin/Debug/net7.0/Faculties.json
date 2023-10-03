@@ -1,0 +1,87 @@
+[
+  {
+    "name": "Calculatoare, informatica si microelectronica",
+    "abbreviation": "CIM",
+    "students": [
+      {
+        "firstName": "Dragos",
+        "lastName": "Malade",
+        "email": "d.malade@isa.utm.md",
+        "enrollmnetDate": {
+          "year": 2022,
+          "month": 3,
+          "day": 12
+        },
+        "birthDate": {
+          "year": 2004,
+          "month": 5,
+          "day": 16
+        },
+        "graduatioStatus": false
+      },
+      {
+        "firstName": "Marius",
+        "lastName": "Popa",
+        "email": "m.popa@isa.utm.md",
+        "enrollmnetDate": {
+          "year": 2016,
+          "month": 2,
+          "day": 12
+        },
+        "birthDate": {
+          "year": 1997,
+          "month": 4,
+          "day": 23
+        },
+        "graduatioStatus": false
+      }
+    ],
+    "studyField": 1
+  },
+  {
+    "name": "Urbanism si Arhitectura",
+    "abbreviation": "UA",
+    "students": [
+      {
+        "firstName": "Bianca",
+        "lastName": "Corols",
+        "email": "b.corols@ua.utm.md",
+        "enrollmnetDate": {
+          "year": 2013,
+          "month": 12,
+          "day": 4
+        },
+        "birthDate": {
+          "year": 1994,
+          "month": 5,
+          "day": 6
+        },
+        "graduatioStatus": false
+      }
+    ],
+    "studyField": 3
+  },
+  {
+    "name": "Inginerie mecanica, industriala si transporturi",
+    "abbreviation": "IMIT",
+    "students": [
+      {
+        "firstName": "Liviu",
+        "lastName": "Resal",
+        "email": "l.resal@ita.utm.md",
+        "enrollmnetDate": {
+          "year": 2021,
+          "month": 8,
+          "day": 24
+        },
+        "birthDate": {
+          "year": 2003,
+          "month": 2,
+          "day": 13
+        },
+        "graduatioStatus": false
+      }
+    ],
+    "studyField": 0
+  }
+]

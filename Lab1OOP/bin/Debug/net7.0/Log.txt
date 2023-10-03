@@ -1,0 +1,7 @@
+[10/3/2023 4:27:31 PM]Created a new faculty: Calculatoare, informatica si microelectronica
+[10/3/2023 4:27:58 PM]Created a new faculty: Urbanism si Arhitectura
+[10/3/2023 4:28:53 PM]Created a new faculty: Infinerie mecanica, industriala si transporturi
+[10/3/2023 4:29:14 PM]Created a new student: Dragos Malade. Assigned to faculty: Calculatoare, informatica si microelectronica
+[10/3/2023 4:29:14 PM]Created a new student: Bianca Corols. Assigned to faculty: Urbanism si Arhitectura
+[10/3/2023 4:29:14 PM]Created a new student: Liviu Resal. Assigned to faculty: Infinerie mecanica, industriala si transporturi
+[10/3/2023 4:31:46 PM]Created a new student: Marius Popa. Assigned to faculty: Calculatoare, informatica si microelectronica
