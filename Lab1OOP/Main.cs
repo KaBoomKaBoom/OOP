@@ -1,5 +1,6 @@
 ﻿using Lab1OOP;
 
+// FInal version
 var fileManager = new FileManager();
 List<Faculty> faculties = fileManager.StartSession();
 var generalOperations= new GeneralOperations();
