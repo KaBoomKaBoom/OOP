@@ -4,7 +4,7 @@ namespace Lab2
 	public class PrintInfoTextFiles : PrintInfoAllFiles
 	{
 		
-		public int lines = 0, words=0, characters=0;
+		private int lines = 0, words=0, characters=0;
         
         public void LinesCount(string fileName) 
 		{

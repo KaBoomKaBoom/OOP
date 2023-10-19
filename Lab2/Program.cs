@@ -15,3 +15,8 @@ printInfoTextFiles.LinesCount("BazeDeDate.txt");
 printInfoTextFiles.WordCount("BazeDeDate.txt");
 printInfoTextFiles.CharactersCount("BazeDeDate.txt");
 printInfoTextFiles.PrintFileInfo();
+
+//info programFiles
+PrintInfoProgramFiles printInfoProgramFiles = new PrintInfoProgramFiles();
+printInfoProgramFiles.CountLines("FileManager.cs");
+printInfoProgramFiles.PrintProgramFileInfo();
