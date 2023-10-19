@@ -17,7 +17,7 @@ namespace Lab2
                 Console.WriteLine("Last Updated: " + fileInfo.LastWriteTime);
             }
         }
-        public void PrintInfoSpecificFile(string fileNae)
+        public void PrintInfoSpecificFile(string fileName)
         {
             FileInfo fileInfo = new FileInfo(Path.Combine(filePath, fileName));
             Console.WriteLine("File Name: " + fileInfo.Name);
