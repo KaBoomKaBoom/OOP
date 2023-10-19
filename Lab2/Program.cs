@@ -12,4 +12,6 @@ printInfoImageFiles.PrintImageSize("test.png");
 //info text file.txt
 PrintInfoTextFiles printInfoTextFiles = new PrintInfoTextFiles();
 printInfoTextFiles.LinesCount("BazeDeDate.txt");
+printInfoTextFiles.WordCount("BazeDeDate.txt");
+printInfoTextFiles.CharactersCount("BazeDeDate.txt");
 printInfoTextFiles.PrintFileInfo();
