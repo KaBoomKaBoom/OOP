@@ -20,4 +20,5 @@ printInfoTextFiles.PrintFileInfo();
 PrintInfoProgramFiles printInfoProgramFiles = new PrintInfoProgramFiles();
 printInfoProgramFiles.CountLines("FileManager.cs");
 printInfoProgramFiles.CountClasses("FileManager.cs");
+printInfoProgramFiles.CountMethods("FileManager.cs");
 printInfoProgramFiles.PrintProgramFileInfo();

@@ -34,10 +34,26 @@ namespace Lab2
                 }
             }
         }
+        public void CountMethods(string fileName)
+        {
+            string[] lines = File.ReadAllLines(Path.Combine(filePath, fileName));
+
+            // Regular expression to match common C# method signatures
+            Regex methodSignatureRegex = new Regex(@"\b(?:public|private|protected|internal)?\s+\w+\s+\w+\s*\(.+\)");
+
+            foreach (string line in lines)
+            {
+                if (methodSignatureRegex.IsMatch(line))
+                {
+                    methods++;
+                }
+            }
+        }
         public void PrintProgramFileInfo()
         {
             Console.WriteLine($"Number of lines: {lines}");
             Console.WriteLine($"Number of classes: {classes}");
+            Console.WriteLine($"Number of methods: {methods}");
         }
     }
 }
