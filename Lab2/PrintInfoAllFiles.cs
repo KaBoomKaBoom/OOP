@@ -1,15 +1,25 @@
 ﻿using System;
-
-public class PrintInfoAllFiles
+namespace Lab2
 {
-	private string filePath= @"C:\\Users\Andrei\Desktop\TestOOP\";
-    
-	public void PrintInfo()
-	{
-        string[] files = Directory.GetFiles(filePath);
-        foreach (var item in files)
+    public class PrintInfoAllFiles
+    {
+        protected string filePath = @"C:\\Users\Andrei\Desktop\TestOOP\";
+
+        public void PrintInfoFiles()
         {
-            FileInfo fileInfo = new FileInfo(item);
+            string[] files = Directory.GetFiles(filePath);
+            foreach (var item in files)
+            {
+                FileInfo fileInfo = new FileInfo(item);
+                Console.WriteLine("File Name: " + fileInfo.Name);
+                Console.WriteLine("Extension: " + fileInfo.Extension);
+                Console.WriteLine("Created: " + fileInfo.CreationTime);
+                Console.WriteLine("Last Updated: " + fileInfo.LastWriteTime);
+            }
+        }
+        public void PrintInfoSpecificFile(string fileNae)
+        {
+            FileInfo fileInfo = new FileInfo(Path.Combine(filePath, fileName));
             Console.WriteLine("File Name: " + fileInfo.Name);
             Console.WriteLine("Extension: " + fileInfo.Extension);
             Console.WriteLine("Created: " + fileInfo.CreationTime);
@@ -17,4 +27,3 @@ public class PrintInfoAllFiles
         }
     }
 }
-	
