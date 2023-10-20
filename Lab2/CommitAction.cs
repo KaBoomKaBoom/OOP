@@ -5,6 +5,9 @@ namespace Lab2
     {
         private static Dictionary<string, FileSnapshot> fileSnapshots = new Dictionary<string, FileSnapshot>();
         private static DateTime snapshotTime = DateTime.Now;
+
+        //need a method to extract from a file into the dictionary
+        //need a method to store the changes into the file
         public void UpdateSnaphotTime() 
         {
             snapshotTime = DateTime.Now;
