@@ -13,40 +13,24 @@ namespace Lab2
         public void CountClasses(string fileName)
         {
             string[] lines = File.ReadAllLines(Path.Combine(filePath, fileName));
-
-            bool insideClass = false;
-
             foreach (string line in lines)
             {
                 // Check if the line contains the class keyword
                 if (Regex.IsMatch(line, @"\bclass\b"))
                 {
-                    if (!insideClass)
-                    {
-                        classes++;
-                        insideClass = true;
-                    }
-                }
-                // Check if the line contains the closing brace of a class
-                else if (insideClass && line.Contains("}"))
-                {
-                    insideClass = false;
+                    classes++;
                 }
             }
         }
         public void CountMethods(string fileName)
         {
-            string[] lines = File.ReadAllLines(Path.Combine(filePath, fileName));
+            string code = File.ReadAllText(Path.Combine(filePath, fileName));
+            string pattern = @"(\bpublic|\bprivate|\bprotected|\binternal)?\s+\w+\s+\w+\s*\([^)]*\)\s*{";
 
-            // Regular expression to match common C# method signatures
-            Regex methodSignatureRegex = new Regex(@"\b(?:public|private|protected|internal)?\s+\w+\s+\w+\s*\(.+\)");
-
-            foreach (string line in lines)
+            MatchCollection matches = Regex.Matches(code, pattern);
+            foreach (Match match in matches)
             {
-                if (methodSignatureRegex.IsMatch(line))
-                {
-                    methods++;
-                }
+                methods++;
             }
         }
         public void PrintProgramFileInfo()
