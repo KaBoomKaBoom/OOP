@@ -3,12 +3,13 @@ namespace Lab2
 {
     public class CommitAction
     {
-        private static Dictionary<string, FileSnapshot> fileSnapshots = new Dictionary<string, FileSnapshot>();
-        private static DateTime snapshotTime = DateTime.Now;
+        public  Dictionary<string, FileSnapshot> fileSnapshots = new Dictionary<string, FileSnapshot>();
+        private  DateTime snapshotTime = DateTime.Now;
 
-        //need a method to extract from a file into the dictionary
-        //need a method to store the changes into the file
-        public void UpdateSnaphotTime() 
+		//need a method to extract from a file into the dictionary
+		//need a method to store the changes into the file
+        
+		public void UpdateSnaphotTime() 
         {
             snapshotTime = DateTime.Now;
             Console.WriteLine("Snapshot time updated to: " + snapshotTime);
@@ -19,6 +20,7 @@ namespace Lab2
                 fileSnapshots[filename] = snapshot;
                 Console.WriteLine(filename, fileSnapshots[filename]);
             }
+
 
         }
     }

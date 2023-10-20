@@ -1,13 +1,5 @@
 ﻿using Lab2;
 
-
-
-
-
-
-
-
-
 string option = "";
 Console.WriteLine("Available options: ");
 Console.WriteLine("1. commit");
@@ -20,9 +12,10 @@ while (option != "q")
     switch (splitOption[0]) 
     {
         case "commit":
-            FileSnapshot fileSnapshot = new FileSnapshot();
             CommitAction commitAction = new CommitAction();
+            SnapshotStorageFileManager snapshotStorage = new SnapshotStorageFileManager();   
             commitAction.UpdateSnaphotTime();
+            snapshotStorage.StoreSnapshot(commitAction.fileSnapshots);
             break;
         case "info":
             string[] getExtension = splitOption[1].Split('.');
