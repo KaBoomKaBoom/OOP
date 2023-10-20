@@ -20,6 +20,9 @@ while (option != "q")
     switch (splitOption[0]) 
     {
         case "commit":
+            FileSnapshot fileSnapshot = new FileSnapshot();
+            CommitAction commitAction = new CommitAction();
+            commitAction.UpdateSnaphotTime();
             break;
         case "info":
             string[] getExtension = splitOption[1].Split('.');
