@@ -64,7 +64,10 @@ while (option != "q")
             StatusAction statusAction= new StatusAction();
 			SnapshotStorageFileManager snapshot = new SnapshotStorageFileManager();
 			snapshot.ExtractrLastSnapshot(snapshotTime);
-            statusAction.PrintStatus(snapshotTime);
+			var previousFiles = new List<string>();
+			snapshot.ExtractSavedFiles(previousFiles);
+            Console.WriteLine(previousFiles.Count);
+            statusAction.PrintStatus(snapshotTime,previousFiles);
             break;
         case "q":
             break;

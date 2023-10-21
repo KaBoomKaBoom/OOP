@@ -8,14 +8,17 @@ namespace Lab2
 	public class SnapshotStorageFileManager
 	{
 		string fileName = "Snapshots.txt";
-		
+		protected string filePath = @"TestOOP\";
+
 		public void StoreSnapshot(DateTime snapshotTime, Dictionary<string, FileSnapshot> fileSnapshots) 
 		{
 			string FMT = "O";
 			string contentToSave = snapshotTime.ToString(FMT)+"\n";
-			foreach (var pair in fileSnapshots) 
+			string[] files = Directory.GetFiles(filePath);
+			foreach (var item in files) 
 			{
-				contentToSave = pair.Key + "\n";	
+				FileInfo fileInfo = new FileInfo(item);
+				contentToSave += fileInfo.Name + "\n";	
 			}
 			File.WriteAllText(fileName, contentToSave);
 		}
