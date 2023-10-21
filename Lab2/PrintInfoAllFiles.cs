@@ -3,7 +3,7 @@ namespace Lab2
 {
     public class PrintInfoAllFiles
     {
-        protected string filePath = @"C:\\Users\Andrei\Desktop\TestOOP\";
+        protected string filePath = @"TestOOP\";
 
         public void PrintInfoFiles()
         {

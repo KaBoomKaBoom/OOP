@@ -1,12 +1,15 @@
 ﻿using Lab2;
 
 string option = "";
+DateTime snapshotTime = DateTime.Now;
+
 Console.WriteLine("Available options: ");
 Console.WriteLine("1. commit");
 Console.WriteLine("2. info <filename> (allfiles, image, text, program)");
 Console.WriteLine("3. status");
 while (option != "q")
 {
+    Console.Write(">>> ");
     option = Console.ReadLine();
     string[] splitOption = option.Split(' ');
     switch (splitOption[0]) 
@@ -16,7 +19,6 @@ while (option != "q")
             SnapshotStorageFileManager snapshotStorage = new SnapshotStorageFileManager();
             commitAction.UpdateSnaphotTime();
             snapshotStorage.StoreSnapshot(commitAction.snapshotTime);
-            //snapshotStorage.ExtractrLastSnapshot(commitAction.snapshotTime);
             break;
         case "info":
             string[] getExtension = splitOption[1].Split('.');
@@ -56,9 +58,16 @@ while (option != "q")
                             break;
                     }
                     break;
-
-
             }
+            break;
+        case "status":
+            StatusAction statusAction= new StatusAction();
+			SnapshotStorageFileManager snapshot = new SnapshotStorageFileManager();
+			snapshot.ExtractrLastSnapshot(snapshotTime);
+            statusAction.PrintStatus(snapshotTime);
+            break;
+        default :
+            Console.WriteLine("Wrong operation!");
             break;
     }
 }
