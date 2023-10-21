@@ -18,7 +18,7 @@ while (option != "q")
             CommitAction commitAction = new CommitAction();
             SnapshotStorageFileManager snapshotStorage = new SnapshotStorageFileManager();
             commitAction.UpdateSnaphotTime();
-            snapshotStorage.StoreSnapshot(commitAction.snapshotTime);
+            snapshotStorage.StoreSnapshot(commitAction.snapshotTime, commitAction.fileSnapshots);
             break;
         case "info":
             string[] getExtension = splitOption[1].Split('.');
@@ -65,6 +65,8 @@ while (option != "q")
 			SnapshotStorageFileManager snapshot = new SnapshotStorageFileManager();
 			snapshot.ExtractrLastSnapshot(snapshotTime);
             statusAction.PrintStatus(snapshotTime);
+            break;
+        case "q":
             break;
         default :
             Console.WriteLine("Wrong operation!");
