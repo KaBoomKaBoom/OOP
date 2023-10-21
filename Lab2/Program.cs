@@ -13,9 +13,10 @@ while (option != "q")
     {
         case "commit":
             CommitAction commitAction = new CommitAction();
-            SnapshotStorageFileManager snapshotStorage = new SnapshotStorageFileManager();   
+            SnapshotStorageFileManager snapshotStorage = new SnapshotStorageFileManager();
             commitAction.UpdateSnaphotTime();
-            snapshotStorage.StoreSnapshot(commitAction.fileSnapshots);
+            snapshotStorage.StoreSnapshot(commitAction.snapshotTime);
+            //snapshotStorage.ExtractrLastSnapshot(commitAction.snapshotTime);
             break;
         case "info":
             string[] getExtension = splitOption[1].Split('.');

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.IO;
 using System.Text.RegularExpressions;
 
@@ -7,18 +8,20 @@ namespace Lab2
 	public class SnapshotStorageFileManager
 	{
 		string fileName = "Snapshots.txt";
-		protected static string filePath = @"C:\\Users\Victor\source\repos\OOP\Lab2\TestOOP\";
 		
-		
-		public void StoreSnapshot(Dictionary<string, FileSnapshot> fileSnapshots) 
+		public void StoreSnapshot(DateTime snapshotTime) 
 		{
-			string contentToSave = "";
-			foreach (var pair in fileSnapshots) 
-			{
-				contentToSave=pair.Key+"     ["+pair.Value+"]\n";
-			}
+			string FMT = "O";
+			string contentToSave = snapshotTime.ToString(FMT);
 			File.WriteAllText(fileName, contentToSave);
 		}
-		
+		public void ExtractrLastSnapshot(DateTime snapshotTime)
+		{
+			string FMT = "O";
+			string contentToExtract = File.ReadAllText(fileName);
+			snapshotTime = DateTime.ParseExact(contentToExtract, FMT, CultureInfo.InvariantCulture, DateTimeStyles.RoundtripKind);
+			Console.WriteLine(snapshotTime);
+		}
+
 	}
 }
