@@ -10,10 +10,10 @@ namespace Lab2
 		{
 			string[] files = Directory.GetFiles(filePath);
 			List<string> currentFiles = files.ToList();
+
 			foreach (var item in currentFiles)
 			{
 				FileInfo fileInfo = new FileInfo(item);
-				Console.WriteLine(fileInfo.Name);
 				if (fileInfo.LastWriteTime > snapshotTime && previousFiles.Contains(fileInfo.Name))
 				{
 					Console.WriteLine(fileInfo.Name + " - Changed");
@@ -30,11 +30,13 @@ namespace Lab2
 			foreach (var item in previousFiles) 
 			{
 				FileInfo fileInfo = new FileInfo(item);
-				if (!currentFiles.Contains(fileInfo.Name))
+				int countMatches = 0;
+				foreach (var file in currentFiles) 
 				{
-					Console.WriteLine(fileInfo.Name + " - Deleted");
+					FileInfo curentFile = new FileInfo(file);
+					if (fileInfo.Name == curentFile.Name) countMatches += 1;
 				}
-				
+				if (countMatches != 1) Console.WriteLine(fileInfo.Name+" - Deleted");
 			}
 		}
 	}
