@@ -23,4 +23,12 @@ directed by the heads of the Software Engineering faculty. Using just these scri
   * YearBirth
   * MonthBirth
   * DayBirth
-- If you want to graduate multiple students via a txt file (ForGraduation.txt), it should contain valid email, one on a line   
+- If you want to graduate multiple students via a txt file (ForGraduation.txt), it should contain valid email, one on a line
+
+**Laboratory nr.1**
+In this laboratory, the task is to develop a simplified version of git functionality that detects changes
+within a specific folder.
+
+**Remarks about working with files in this laboratory:**
+- File with saved snapshot and exiting files at that moment is in .\Lab1OOP\bin\Debug\net7.0\
+- Folder to test the functionality in TestOOP from .\Lab1OOP\bin\Debug\net7.0\
