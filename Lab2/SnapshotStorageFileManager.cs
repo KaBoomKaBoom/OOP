@@ -7,10 +7,10 @@ namespace Lab2
 {
 	public class SnapshotStorageFileManager
 	{
-		string fileName = "Snapshots.txt";
-		protected string filePath = @"TestOOP\";
+		private string fileName = "Snapshots.txt";
+		private string filePath = @"TestOOP\";
 
-		public void StoreSnapshot(DateTime snapshotTime, Dictionary<string, FileSnapshot> fileSnapshots) 
+		public void StoreSnapshot(DateTime snapshotTime) 
 		{
 			string FMT = "O";
 			string contentToSave = snapshotTime.ToString(FMT)+"\n";
@@ -22,12 +22,12 @@ namespace Lab2
 			}
 			File.WriteAllText(fileName, contentToSave);
 		}
-		public void ExtractrLastSnapshot(DateTime snapshotTime)
+		public void ExtractLastSnapshot(DateTime snapshotTime)
 		{
 			string FMT = "O";
 			string[] contentToExtract = File.ReadAllLines(fileName);
 			snapshotTime = DateTime.ParseExact(contentToExtract[0], FMT, CultureInfo.InvariantCulture, DateTimeStyles.RoundtripKind);
-			Console.WriteLine("Crerated snapshot at: "+snapshotTime);
+			Console.WriteLine("Created snapshot at: " + snapshotTime);
 		}
 		public void ExtractSavedFiles(List<string> savedFiles) 
 		{

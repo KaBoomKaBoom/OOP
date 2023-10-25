@@ -21,16 +21,18 @@ namespace Lab2
 			Console.WriteLine("1. commit");
 			Console.WriteLine("2. info <filename> (allfiles, image, text, program)");
 			Console.WriteLine("3. status");
+			Console.WriteLine("4. q - quit");
 			while (option != "q")
 			{
-				Console.Write(">>> ");
+				
+				Console.Write("\n>>> ");
 				option = Console.ReadLine();
 				string[] splitOption = option.Split(' ');
 				switch (splitOption[0])
 				{
 					case "commit":
-						commitAction.UpdateSnaphotTime();
-						snapshotStorage.StoreSnapshot(commitAction.snapshotTime, commitAction.fileSnapshots);
+						snapshotTime = commitAction.UpdateSnaphotTime();
+						snapshotStorage.StoreSnapshot(snapshotTime);
 						break;
 					case "info":
 						string[] getExtension = splitOption[1].Split('.');
@@ -69,7 +71,7 @@ namespace Lab2
 						}
 						break;
 					case "status":
-						snapshotFileManager.ExtractrLastSnapshot(snapshotTime);
+						snapshotFileManager.ExtractLastSnapshot(snapshotTime);
 						var previousFiles = new List<string>();
 						snapshotFileManager.ExtractSavedFiles(previousFiles);
 						statusAction.PrintStatus(snapshotTime, previousFiles);

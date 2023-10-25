@@ -3,7 +3,7 @@ namespace Lab2
 {
     public class FileSnapshot
     {
-        public DateTime LastModified { get; set; }
+        private DateTime LastModified { get; set; }
 
 		public static implicit operator FileSnapshot(DateTime v)
 		{
