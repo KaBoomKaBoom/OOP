@@ -51,9 +51,9 @@ while (option != "q")
                             //info programFiles
                             PrintInfoProgramFiles printInfoProgramFiles = new PrintInfoProgramFiles();
                             printInfoProgramFiles.PrintInfoSpecificFile(splitOption[1]);
-                            printInfoProgramFiles.CountLines("FileManager.cs");
-                            printInfoProgramFiles.CountClasses("FileManager.cs");
-                            printInfoProgramFiles.CountMethods("FileManager.cs");
+                            printInfoProgramFiles.CountLines(splitOption[1]);
+                            printInfoProgramFiles.CountClasses(splitOption[1]);
+                            printInfoProgramFiles.CountMethods(splitOption[1]);
                             printInfoProgramFiles.PrintProgramFileInfo();
                             break;
                     }

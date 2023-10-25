@@ -28,10 +28,8 @@ namespace Lab2
             string pattern = @"(\bpublic|\bprivate|\bprotected|\binternal)?\s+\w+\s+\w+\s*\([^)]*\)\s*{";
 
             MatchCollection matches = Regex.Matches(code, pattern);
-            foreach (Match match in matches)
-            {
-                methods++;
-            }
+            methods = matches.Count();
+
         }
         public void PrintProgramFileInfo()
         {
