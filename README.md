@@ -25,7 +25,7 @@ directed by the heads of the Software Engineering faculty. Using just these scri
   * DayBirth
 - If you want to graduate multiple students via a txt file (ForGraduation.txt), it should contain valid email, one on a line
 
-**Laboratory nr.1**
+**Laboratory nr.2**
 In this laboratory, the task is to develop a simplified version of git functionality that detects changes
 within a specific folder.
 
