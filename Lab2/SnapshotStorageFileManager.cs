@@ -27,7 +27,7 @@ namespace Lab2
 			string FMT = "O";
 			string[] contentToExtract = File.ReadAllLines(fileName);
 			snapshotTime = DateTime.ParseExact(contentToExtract[0], FMT, CultureInfo.InvariantCulture, DateTimeStyles.RoundtripKind);
-			Console.WriteLine(snapshotTime);
+			Console.WriteLine("Crerated snapshot at: "+snapshotTime);
 		}
 		public void ExtractSavedFiles(List<string> savedFiles) 
 		{
