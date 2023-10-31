@@ -1,12 +1,12 @@
 ﻿using System;
 
-public interface IStack<T>
+public interface IQueue<T>
 {
 	int count { get; }
 	bool isEmpty { get; }
 
-	void Push(T item);
+	void Enqueue(T item);
+	T Dequeue();
 	T Peek();
-	T Pop();
 	void Clear();
 }
