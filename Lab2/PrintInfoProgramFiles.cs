@@ -22,7 +22,7 @@ namespace Lab2
                 }
             }
         }
-        public void CountMethods(string fileName)
+        public void CountMethodsJava(string fileName)
         {
             string code = File.ReadAllText(Path.Combine(filePath, fileName));
             string pattern = @"(\bpublic|\bprivate|\bprotected|\binternal)?\s+\w+\s+\w+\s*\([^)]*\)\s*{";
@@ -31,8 +31,18 @@ namespace Lab2
             methods = matches.Count();
 
         }
-        public void PrintProgramFileInfo()
+        //@"^(\s*(def|class)\s+)(\w+)(\(.*\))\s*->(\s*\w+\s*):$"
+        public void CountMethodsPython(string fileName)
         {
+            string code = File.ReadAllText(Path.Combine(filePath, fileName));
+            string pattern = @"^(\s*(def)\s+)(\w+)(\(.*\))\s*->(\s*\w+\s*):$";
+            MatchCollection matches = Regex.Matches(code, pattern);
+            methods = matches.Count();
+
+        }
+        public void PrintProgramFileInfo(string fileName)
+        {
+            PrintInfoSpecificFile(Path.Combine(filePath, fileName));
             Console.WriteLine($"Number of lines: {lines}");
             Console.WriteLine($"Number of classes: {classes}");
             Console.WriteLine($"Number of methods: {methods}");

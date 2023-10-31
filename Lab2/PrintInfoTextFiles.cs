@@ -21,9 +21,10 @@ namespace Lab2
             string[] lines = File.ReadAllLines(Path.Combine(filePath, fileName));
             characters = lines.Sum(line => line.Length);
         }
-        public void PrintFileInfo() 
+        public void PrintFileInfo(string fileName) 
 		{
-			Console.WriteLine($"Number of lines: {lines}");
+            PrintInfoSpecificFile(Path.Combine(filePath, fileName));
+            Console.WriteLine($"Number of lines: {lines}");
 			Console.WriteLine($"Number of words: {words}");
 			Console.WriteLine($"Number of characters: {characters}");
 		}

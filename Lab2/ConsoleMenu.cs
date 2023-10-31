@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Lab2;
+using System;
 
 namespace Lab2
 {
@@ -47,25 +48,31 @@ namespace Lab2
 								{
 									case "png":
 										//info image file.png  +++
-										printInfoImageFiles.PrintInfoSpecificFile(splitOption[1]);
 										printInfoImageFiles.PrintImageSize(splitOption[1]);
 										break;
 									case "txt":
 										//info text file.txt
-										printInfoTextFiles.PrintInfoSpecificFile(splitOption[1]);
 										printInfoTextFiles.LinesCount(splitOption[1]);
 										printInfoTextFiles.WordCount(splitOption[1]);
 										printInfoTextFiles.CharactersCount(splitOption[1]);
-										printInfoTextFiles.PrintFileInfo();
+										printInfoTextFiles.PrintFileInfo(splitOption[1]);
 										break;
-									default:
-										//info programFiles
-										printInfoProgramFiles.PrintInfoSpecificFile(splitOption[1]);
+
+									//info programFiles
+									case "cs":
 										printInfoProgramFiles.CountLines(splitOption[1]);
 										printInfoProgramFiles.CountClasses(splitOption[1]);
-										printInfoProgramFiles.CountMethods(splitOption[1]);
-										printInfoProgramFiles.PrintProgramFileInfo();
+										printInfoProgramFiles.CountMethodsJava(splitOption[1]);
+										printInfoProgramFiles.PrintProgramFileInfo(splitOption[1]);
 										break;
+									case "py":
+										printInfoProgramFiles.CountLines(splitOption[1]);
+										printInfoProgramFiles.CountClasses(splitOption[1]);
+										printInfoProgramFiles.CountMethodsPython(splitOption[1]);
+										printInfoProgramFiles.PrintProgramFileInfo(splitOption[1]);
+										break;
+
+
 								}
 								break;
 						}
@@ -83,6 +90,7 @@ namespace Lab2
 						break;
 				}
 			}
-		}
-	}
+        }
+    }
 }
+

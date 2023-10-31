@@ -22,8 +22,6 @@ namespace Lab2
             FileInfo fileInfo = new FileInfo(Path.Combine(filePath, fileName));
             Console.WriteLine("File Name: " + fileInfo.Name);
             Console.WriteLine("Extension: " + fileInfo.Extension);
-            Console.WriteLine("Created: " + fileInfo.CreationTime);
-            Console.WriteLine("Last Updated: " + fileInfo.LastWriteTime);
         }
     }
 }
