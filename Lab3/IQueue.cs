@@ -2,8 +2,8 @@
 
 public interface IQueue<T>
 {
-	int count { get; }
-	bool isEmpty { get; }
+	int Count { get; }
+	bool IsEmpty { get; }
 
 	void Enqueue(T item);
 	T Dequeue();
