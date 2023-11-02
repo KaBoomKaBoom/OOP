@@ -38,6 +38,7 @@ public class ArrayDownStack<T> : IStack<T>
 
 	public void Clear()
 	{
+		Console.WriteLine("Cleared!\n");
 		top = stack.Length; 
 	}
 }

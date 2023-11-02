@@ -15,6 +15,7 @@ public class OperationHandler
 		Console.Write(">>> ");
 	}
 
+	//handler for ArrayUpStackHandler
 	public void ArrayUpStackHandler(int capacity) 
 	{
 		var arrayUpStack = new ArrayUpStack<int>(capacity);
@@ -59,6 +60,59 @@ public class OperationHandler
 					break;
 				case "clear":
 					arrayUpStack.Clear();
+					break;
+				default:
+					Console.WriteLine("Invalid operation!");
+					break;
+			}
+		}
+	}
+
+	//handler for ArrayDownStackHandler
+	public void ArrayDownStackHandler(int capacity)
+	{
+		var arrayDownStack = new ArrayDownStack<int>(capacity); 
+		while (option != "b")
+		{
+			PrintAvailableOperations();
+			option = Console.ReadLine();
+			switch (option)
+			{
+				case "push":
+					for (int i = 0; i < capacity; i++)
+					{
+						Console.Write("Element: ");
+						var item = Console.ReadLine();
+						arrayDownStack.Push(Convert.ToInt32(item));
+					}
+					break;
+				case "pop":
+					if (arrayDownStack.IsEmpty)
+					{
+						Console.WriteLine("Stack is empty!");
+					}
+					else
+					{
+						Console.WriteLine("Items: ");
+						while (!arrayDownStack.IsEmpty)
+						{
+							Console.Write(arrayDownStack.Pop() + " ");
+						}
+						Console.ReadLine();
+					}
+					break;
+				case "peek":
+					if (arrayDownStack.IsEmpty)
+					{
+						Console.WriteLine("Stack is empty!");
+					}
+					else
+					{
+						Console.WriteLine($"Top element: {arrayDownStack.Peek()}");
+					}
+					break;
+				case "clear":
+					arrayDownStack.Clear();
 					break;
 				default:
 					Console.WriteLine("Invalid operation!");

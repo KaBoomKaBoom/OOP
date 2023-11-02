@@ -38,7 +38,7 @@ public class ConsoleMenu
 					break;
 				case "ads":
 					capacity = GetCapacity();
-					var arrayDownStack = new ArrayDownStack<int>(capacity);
+					operationHandler.ArrayDownStackHandler(capacity);
 					break;
 				case "lls":
 					capacity = GetCapacity();
