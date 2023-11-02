@@ -53,7 +53,8 @@ public class ConsoleMenu
 					operationHandler.ArrayDownQueueHandler(capacity);
 					break;
 				case "llq":
-					var linkedListQueue = new QueueLinkList<int>();
+					capacity = GetCapacity();
+					operationHandler.QueueLinkListHandler(capacity);
 					break;
 			}
 		}

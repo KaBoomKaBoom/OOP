@@ -279,4 +279,57 @@ public class OperationHandler
 			}
 		}
 	}
+
+	//handler for QueueLinkList
+	public void QueueLinkListHandler(int capacity)
+	{
+		var linkedListQueue = new QueueLinkList<int>();
+		while (option != "b")
+		{
+			PrintAvailableOperations();
+			option = Console.ReadLine();
+			switch (option)
+			{
+				case "push":
+					for (int i = 0; i < capacity; i++)
+					{
+						Console.Write("Element: ");
+						var item = Console.ReadLine();
+						linkedListQueue.Enqueue(Convert.ToInt32(item));
+					}
+					break;
+				case "pop":
+					if (linkedListQueue.IsEmpty)
+					{
+						Console.WriteLine("Queue is empty!");
+					}
+					else
+					{
+						Console.Write("Items: ");
+						while (!linkedListQueue.IsEmpty)
+						{
+							Console.Write(linkedListQueue.Dequeue() + " ");
+						}
+						Console.ReadLine();
+					}
+					break;
+				case "peek":
+					if (linkedListQueue.IsEmpty)
+					{
+						Console.WriteLine("Stack is empty!");
+					}
+					else
+					{
+						Console.WriteLine($"Top element: {linkedListQueue.Peek()}");
+					}
+					break;
+				case "clear":
+					linkedListQueue.Clear();
+					break;
+				default:
+					Console.WriteLine("Invalid operation!");
+					break;
+			}
+		}
+	}
 }
