@@ -42,7 +42,7 @@ public class ConsoleMenu
 					break;
 				case "lls":
 					capacity = GetCapacity();
-					var linkedListStack = new StackLinkList<int>();
+					operationHandler.StackLinkListHandler(capacity);
 					break;
 				case "auq":
 					capacity = GetCapacity();
