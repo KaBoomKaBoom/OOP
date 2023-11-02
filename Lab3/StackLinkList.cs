@@ -36,6 +36,7 @@ public class StackLinkList<T> : IStack<T>
 
 	public void Clear()
 	{
+		Console.WriteLine("Cleared!\n");
 		stack.Clear();
 	}
 }

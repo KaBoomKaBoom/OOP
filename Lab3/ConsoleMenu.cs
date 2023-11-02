@@ -46,7 +46,7 @@ public class ConsoleMenu
 					break;
 				case "auq":
 					capacity = GetCapacity();
-					var arrayUpQueue = new ArrayUpQueue<int>(capacity);
+					operationHandler.ArrayUpQueueHandler(capacity);
 					break;
 				case "adq":
 					capacity = GetCapacity();
