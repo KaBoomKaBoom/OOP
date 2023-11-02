@@ -50,7 +50,7 @@ public class ConsoleMenu
 					break;
 				case "adq":
 					capacity = GetCapacity();
-					var arrayDownQueu = new ArrayDownQueue<int>(capacity);
+					operationHandler.ArrayDownQueueHandler(capacity);
 					break;
 				case "llq":
 					var linkedListQueue = new QueueLinkList<int>();

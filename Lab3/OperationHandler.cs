@@ -174,6 +174,7 @@ public class OperationHandler
 		}
 	}
 
+	//handler for ArrayUpQueue
 	public void ArrayUpQueueHandler(int capacity)
 	{
 		var arrayUpQueue = new ArrayUpQueue<int>(capacity);
@@ -194,7 +195,7 @@ public class OperationHandler
 				case "pop":
 					if (arrayUpQueue.IsEmpty)
 					{
-						Console.WriteLine("Stack is empty!");
+						Console.WriteLine("Queue is empty!");
 					}
 					else
 					{
@@ -209,7 +210,7 @@ public class OperationHandler
 				case "peek":
 					if (arrayUpQueue.IsEmpty)
 					{
-						Console.WriteLine("Stack is empty!");
+						Console.WriteLine("Queue is empty!");
 					}
 					else
 					{
@@ -218,6 +219,59 @@ public class OperationHandler
 					break;
 				case "clear":
 					arrayUpQueue.Clear();
+					break;
+				default:
+					Console.WriteLine("Invalid operation!");
+					break;
+			}
+		}
+	}
+
+	//handler for ArrayDownQueue
+	public void ArrayDownQueueHandler(int capacity)
+	{
+		var arrayDownQueue = new ArrayDownQueue<int>(capacity);
+		while (option != "b")
+		{
+			PrintAvailableOperations();
+			option = Console.ReadLine();
+			switch (option)
+			{
+				case "push":
+					for (int i = 0; i < capacity; i++)
+					{
+						Console.Write("Element: ");
+						var item = Console.ReadLine();
+						arrayDownQueue.Enqueue(Convert.ToInt32(item));
+					}
+					break;
+				case "pop":
+					if (arrayDownQueue.IsEmpty)
+					{
+						Console.WriteLine("Queue is empty!");
+					}
+					else
+					{
+						Console.Write("Items: ");
+						while (!arrayDownQueue.IsEmpty)
+						{
+							Console.Write(arrayDownQueue.Dequeue() + " ");
+						}
+						Console.ReadLine();
+					}
+					break;
+				case "peek":
+					if (arrayDownQueue.IsEmpty)
+					{
+						Console.WriteLine("Queue is empty!");
+					}
+					else
+					{
+						Console.WriteLine($"Top element: {arrayDownQueue.Peek()}");
+					}
+					break;
+				case "clear":
+					arrayDownQueue.Clear();
 					break;
 				default:
 					Console.WriteLine("Invalid operation!");
