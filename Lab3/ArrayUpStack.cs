@@ -3,7 +3,7 @@
 public class ArrayUpStack<T> : IStack<T>
 {
 	private T[] stack;
-	private int top;
+	public int top;
 
 	public ArrayUpStack(int capacity) 
 	{
@@ -33,11 +33,13 @@ public class ArrayUpStack<T> : IStack<T>
 	{
 		if (!IsEmpty)
 			return stack[top];
+		
 		throw new InvalidOperationException("Stack is empty.");
 	}
 
 	public void Clear()
 	{
+		Console.WriteLine("Cleared!\n");
 		top = -1;
 	}
 }

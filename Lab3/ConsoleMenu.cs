@@ -2,6 +2,7 @@
 
 public class ConsoleMenu
 {
+	private string option="";
 	public void PrintOperations() 
 	{
 		Console.WriteLine("1. aus - Array Up Stack");
@@ -22,8 +23,8 @@ public class ConsoleMenu
 
 	public void ExecOperations() 
 	{
-		string option;
-		while (true) 
+		var operationHandler = new OperationHandler();
+		while (option != "q")  
 		{
 			PrintOperations();
 			option = Console.ReadLine();
@@ -33,32 +34,26 @@ public class ConsoleMenu
 			{
 				case "aus":
 					var capacity = GetCapacity();
-					var arrayUpStack = new ArrayUpStack<int>(capacity);
-
+					operationHandler.ArrayUpStackHandler(capacity);
 					break;
 				case "ads":
 					capacity = GetCapacity();
 					var arrayDownStack = new ArrayDownStack<int>(capacity);
-
 					break;
 				case "lls":
 					capacity = GetCapacity();
 					var linkedListStack = new StackLinkList<int>();
-
 					break;
 				case "auq":
 					capacity = GetCapacity();
 					var arrayUpQueue = new ArrayUpQueue<int>(capacity);
-
 					break;
 				case "adq":
 					capacity = GetCapacity();
 					var arrayDownQueu = new ArrayDownQueue<int>(capacity);
-
 					break;
 				case "llq":
 					var linkedListQueue = new QueueLinkList<int>();
-
 					break;
 			}
 		}
