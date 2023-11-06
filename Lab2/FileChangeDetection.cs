@@ -66,6 +66,7 @@ namespace Lab2
 			}
 			stopEvent.WaitOne();
 		}
+
 		private void OnTimerElapsed(object state)
 		{
 			List<string> previousFiles = new List<string>();

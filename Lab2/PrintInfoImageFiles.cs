@@ -3,7 +3,7 @@ using System.Drawing;
 
 namespace Lab2
 {
-    public class PrintInfoImageFiles : PrintInfoAllFiles
+    public class InfoImageFiles : InfoAllFiles
     {
         public void PrintImageSize(string fileName)
         {

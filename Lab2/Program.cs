@@ -8,8 +8,8 @@ var menuThread = new Thread(new ThreadStart(consoleMenu.ConsoleOperations));
 menuThread.Start();
 
 var changeDetection = new FileChangeDetection();
-Thread t = new Thread(new ThreadStart(changeDetection.StartDetection));
-t.Start();
-t.Join(); 
+Thread detectionThred = new Thread(new ThreadStart(changeDetection.StartDetection));
+detectionThred.Start();
+detectionThred.Join(); 
 
 menuThread.Join();

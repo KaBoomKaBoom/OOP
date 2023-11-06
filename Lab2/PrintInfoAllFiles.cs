@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Lab2
 {
-    public class PrintInfoAllFiles
+    public class InfoAllFiles
     {
         protected string filePath = @"TestOOP\";
 

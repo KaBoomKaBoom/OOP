@@ -3,14 +3,14 @@ using System.Text.RegularExpressions;
 
 namespace Lab2
 {
-	public class PrintInfoProgramFiles : PrintInfoAllFiles
+	public class InfoProgramFiles : InfoAllFiles
 	{
         private int lines = 0, classes = 0, methods = 0;
-        public void CountLines(string fileName) 
+        public void GetCountLines(string fileName) 
         {
             lines = File.ReadLines(Path.Combine(filePath, fileName)).Count();
         }
-        public void CountClasses(string fileName)
+        public void GetCountClasses(string fileName)
         {
             string[] lines = File.ReadAllLines(Path.Combine(filePath, fileName));
             foreach (string line in lines)
@@ -22,7 +22,7 @@ namespace Lab2
                 }
             }
         }
-        public void CountMethodsJava(string fileName)
+        public void GetCountMethodsJava(string fileName)
         {
             string code = File.ReadAllText(Path.Combine(filePath, fileName));
             string pattern = @"(\bpublic|\bprivate|\bprotected|\binternal)?\s+\w+\s+\w+\s*\([^)]*\)\s*{";
@@ -31,11 +31,11 @@ namespace Lab2
             methods = matches.Count();
 
         }
-        //@"^(\s*(def|class)\s+)(\w+)(\(.*\))\s*->(\s*\w+\s*):$"
-        public void CountMethodsPython(string fileName)
+
+        public void GetCountMethodsPython(string fileName)
         {
             string code = File.ReadAllText(Path.Combine(filePath, fileName));
-            string pattern = @"^(\s*(def)\s+)(\w+)(\(.*\))\s*->(\s*\w+\s*):$";
+            string pattern = @"(\bdef\s+\w+\s*\([^)]*\):)";
             MatchCollection matches = Regex.Matches(code, pattern);
             methods = matches.Count();
 

@@ -1,22 +1,22 @@
 ﻿using System;
 namespace Lab2
 {
-	public class PrintInfoTextFiles : PrintInfoAllFiles
+	public class InfoTextFiles : InfoAllFiles
 	{
 		
 		private int lines = 0, words=0, characters=0;
         
-        public void LinesCount(string fileName) 
+        public void GetCountLines(string fileName) 
 		{
 			lines= File.ReadLines(Path.Combine(filePath, fileName)).Count();
         }
-		public void WordCount(string fileName)
+		public void GetCountWords(string fileName)
 		{
             string[] lines = File.ReadAllLines(Path.Combine(filePath, fileName));
             words = lines.SelectMany(line => line.Split(new[] { ' ','.','?','!','/' }, StringSplitOptions.RemoveEmptyEntries)).Count();
 
         }
-		public void CharactersCount(string fileName)
+		public void GetCountCharacter(string fileName)
 		{
             string[] lines = File.ReadAllLines(Path.Combine(filePath, fileName));
             characters = lines.Sum(line => line.Length);

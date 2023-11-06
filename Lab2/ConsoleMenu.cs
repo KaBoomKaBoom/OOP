@@ -11,10 +11,10 @@ namespace Lab2
 			DateTime snapshotTime = DateTime.Now;
 			CommitAction commitAction = new CommitAction();
 			SnapshotStorageFileManager snapshotStorage = new SnapshotStorageFileManager();
-			PrintInfoAllFiles printAllFilesInfo = new PrintInfoAllFiles();
-			PrintInfoImageFiles printInfoImageFiles = new PrintInfoImageFiles();
-			PrintInfoTextFiles printInfoTextFiles = new PrintInfoTextFiles();
-			PrintInfoProgramFiles printInfoProgramFiles = new PrintInfoProgramFiles();
+			InfoAllFiles allFilesInfo = new InfoAllFiles();
+			InfoImageFiles infoImageFiles = new InfoImageFiles();
+			InfoTextFiles infoTextFiles = new InfoTextFiles();
+			InfoProgramFiles infoProgramFiles = new InfoProgramFiles();
 			StatusAction statusAction = new StatusAction();
 			SnapshotStorageFileManager snapshotFileManager = new SnapshotStorageFileManager();
 
@@ -41,35 +41,35 @@ namespace Lab2
 						{
 							case 1:
 								//info allfiles
-								printAllFilesInfo.PrintInfoFiles();
+								allFilesInfo.PrintInfoFiles();
 								break;
 							case 2:
 								switch (getExtension[1])
 								{
 									case "png":
 										//info image file.png  +++
-										printInfoImageFiles.PrintImageSize(splitOption[1]);
+										infoImageFiles.PrintImageSize(splitOption[1]);
 										break;
 									case "txt":
 										//info text file.txt
-										printInfoTextFiles.LinesCount(splitOption[1]);
-										printInfoTextFiles.WordCount(splitOption[1]);
-										printInfoTextFiles.CharactersCount(splitOption[1]);
-										printInfoTextFiles.PrintFileInfo(splitOption[1]);
+										infoTextFiles.GetCountLines(splitOption[1]);
+										infoTextFiles.GetCountWords(splitOption[1]);
+										infoTextFiles.GetCountCharacter(splitOption[1]);
+										infoTextFiles.PrintFileInfo(splitOption[1]);
 										break;
 
 									//info programFiles
 									case "cs":
-										printInfoProgramFiles.CountLines(splitOption[1]);
-										printInfoProgramFiles.CountClasses(splitOption[1]);
-										printInfoProgramFiles.CountMethodsJava(splitOption[1]);
-										printInfoProgramFiles.PrintProgramFileInfo(splitOption[1]);
+										infoProgramFiles.GetCountLines(splitOption[1]);
+										infoProgramFiles.GetCountClasses(splitOption[1]);
+										infoProgramFiles.GetCountMethodsJava(splitOption[1]);
+										infoProgramFiles.PrintProgramFileInfo(splitOption[1]);
 										break;
 									case "py":
-										printInfoProgramFiles.CountLines(splitOption[1]);
-										printInfoProgramFiles.CountClasses(splitOption[1]);
-										printInfoProgramFiles.CountMethodsPython(splitOption[1]);
-										printInfoProgramFiles.PrintProgramFileInfo(splitOption[1]);
+										infoProgramFiles.GetCountLines(splitOption[1]);
+										infoProgramFiles.GetCountClasses(splitOption[1]);
+										infoProgramFiles.GetCountMethodsPython(splitOption[1]);
+										infoProgramFiles.PrintProgramFileInfo(splitOption[1]);
 										break;
 
 
