@@ -3,6 +3,7 @@
 public class ConsoleMenu
 {
 	private string option="";
+	OperationHandler operationHandler = new OperationHandler();
 	public void PrintOperations() 
 	{
 		Console.WriteLine("1. aus - Array Up Stack");
@@ -23,10 +24,11 @@ public class ConsoleMenu
 
 	public void ExecOperations() 
 	{
-		var operationHandler = new OperationHandler();
+		
 		while (option != "q")  
 		{
 			PrintOperations();
+			option = "";
 			option = Console.ReadLine();
 
 			//implement a class: switch case for operations with stack/queue !!!!!!!!

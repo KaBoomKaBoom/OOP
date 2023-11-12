@@ -19,11 +19,12 @@ public class OperationHandler
 	public void ArrayUpStackHandler(int capacity) 
 	{
 		var arrayUpStack = new ArrayUpStack<int>(capacity);
-		while (option != "b")
+		do
 		{
 			PrintAvailableOperations();
 			option = Console.ReadLine();
-			switch (option) 
+
+			switch (option)
 			{
 				case "push":
 					for (int i = 0; i < capacity; i++)
@@ -40,7 +41,7 @@ public class OperationHandler
 					}
 					else
 					{
-						Console.WriteLine("Items: ");
+						Console.Write("Items: ");
 						while (!arrayUpStack.IsEmpty)
 						{
 							Console.Write(arrayUpStack.Pop() + " ");
@@ -61,21 +62,24 @@ public class OperationHandler
 				case "clear":
 					arrayUpStack.Clear();
 					break;
+				case "b":
+					break;
 				default:
 					Console.WriteLine("Invalid operation!");
 					break;
 			}
-		}
+		} while (option != "b");
 	}
 
 	//handler for ArrayDownStack
 	public void ArrayDownStackHandler(int capacity)
 	{
-		var arrayDownStack = new ArrayDownStack<int>(capacity); 
-		while (option != "b")
+		var arrayDownStack = new ArrayDownStack<int>(capacity);
+		do
 		{
 			PrintAvailableOperations();
 			option = Console.ReadLine();
+
 			switch (option)
 			{
 				case "push":
@@ -114,21 +118,24 @@ public class OperationHandler
 				case "clear":
 					arrayDownStack.Clear();
 					break;
+				case "b":
+					break;
 				default:
 					Console.WriteLine("Invalid operation!");
 					break;
 			}
-		}
+		} while (option != "b");
 	}
 
 	//handler for StackLinkList
 	public void StackLinkListHandler(int capacity)
 	{
-		var linkedListStack = new StackLinkList<int>(); 
-		while (option != "b")
+		var linkedListStack = new StackLinkList<int>();
+		do
 		{
 			PrintAvailableOperations();
 			option = Console.ReadLine();
+
 			switch (option)
 			{
 				case "push":
@@ -167,21 +174,24 @@ public class OperationHandler
 				case "clear":
 					linkedListStack.Clear();
 					break;
+				case "b":
+					break;
 				default:
 					Console.WriteLine("Invalid operation!");
 					break;
 			}
-		}
+		} while (option != "b");
 	}
 
 	//handler for ArrayUpQueue
 	public void ArrayUpQueueHandler(int capacity)
 	{
 		var arrayUpQueue = new ArrayUpQueue<int>(capacity);
-		while (option != "b")
+		do
 		{
 			PrintAvailableOperations();
 			option = Console.ReadLine();
+
 			switch (option)
 			{
 				case "push":
@@ -220,21 +230,24 @@ public class OperationHandler
 				case "clear":
 					arrayUpQueue.Clear();
 					break;
+				case "b":
+					break;
 				default:
 					Console.WriteLine("Invalid operation!");
 					break;
 			}
-		}
+		} while (option != "b");
 	}
 
 	//handler for ArrayDownQueue
 	public void ArrayDownQueueHandler(int capacity)
 	{
 		var arrayDownQueue = new ArrayDownQueue<int>(capacity);
-		while (option != "b")
+		do
 		{
 			PrintAvailableOperations();
 			option = Console.ReadLine();
+
 			switch (option)
 			{
 				case "push":
@@ -273,21 +286,24 @@ public class OperationHandler
 				case "clear":
 					arrayDownQueue.Clear();
 					break;
+				case "b":
+					break;
 				default:
 					Console.WriteLine("Invalid operation!");
 					break;
 			}
-		}
+		} while (option != "b");
 	}
 
 	//handler for QueueLinkList
 	public void QueueLinkListHandler(int capacity)
 	{
 		var linkedListQueue = new QueueLinkList<int>();
-		while (option != "b")
+		do
 		{
 			PrintAvailableOperations();
 			option = Console.ReadLine();
+
 			switch (option)
 			{
 				case "push":
@@ -316,7 +332,7 @@ public class OperationHandler
 				case "peek":
 					if (linkedListQueue.IsEmpty)
 					{
-						Console.WriteLine("Stack is empty!");
+						Console.WriteLine("Queue is empty!");
 					}
 					else
 					{
@@ -326,10 +342,12 @@ public class OperationHandler
 				case "clear":
 					linkedListQueue.Clear();
 					break;
+				case "b":
+					break;
 				default:
 					Console.WriteLine("Invalid operation!");
 					break;
 			}
-		}
+		} while (option != "b");
 	}
 }
