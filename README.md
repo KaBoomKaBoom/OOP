@@ -33,3 +33,10 @@ within a specific folder.
 **Remarks about working with files in this laboratory:**
 - File with saved snapshot and exiting files at that moment is in .\Lab1OOP\bin\Debug\net7.0\
 - Folder to test the functionality in TestOOP from .\Lab1OOP\bin\Debug\net7.0\
+
+**Laboratory nr.3**
+
+In this lab you must describe an abstract Stack and an abstract Queue (their interfaces) and add 3 implementations for each.
+Stack And Queue for 10.
+Only for Stack - 9.
+Only for Stack but two implementations - 8
